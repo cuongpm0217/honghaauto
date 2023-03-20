@@ -14,28 +14,32 @@ public class Employee extends BaseEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@Column(name = "emp_name")
-	private String empName;
-	@Column(name="emp_gen_id")
-	private String empGenId;
-	@Column(name = "emp_nation_id")
-	private String empNationId;
-	@Column(name="emp_tel1")
-	private String empTel1;
-	@Column(name ="emp_tel2")
-	private String empTel2;
-	@Column(name = "emp_dob")
-	private Date empDOB;
-	@Column(name = "emp_add1")
-	private String empAdd1;
-	@Column(name ="emp_add2")
-	private String empAdd2;
-	@Column(name = "emp_Salary")
-	private long empSalary;
-	@Column(name ="emp_Position")
-	private String empPosition;
-	@Column(name="emp_lever")
-	private int empLever;//0-9 des
+	@Column(name = "name")
+	private String name;
+	@Column(name="gen_id")
+	private String genId;
+	@Column(name = "nation_id")
+	private String nationId;
+	@Column(name="tel1")
+	private String tel1;
+	@Column(name ="tel2")
+	private String tel2;
+	@Column(name = "dob")
+	private Date DOB;
+	@Column(name = "add1")
+	private String add1;
+	@Column(name ="add2")
+	private String add2;
+	@Column(name = "salary")
+	private long salary;
+	@Column(name="bank_acc1")
+	private String bankAcc1;
+	@Column(name="bank_acc2")
+	private String bankAcc2;
+	@Column(name ="position")
+	private String position;
+	@Column(name="lever")
+	private int lever;//0-9 des
 	@Column(name="user_id")
 	private long userId;
 	@Column(name="dep_id")
