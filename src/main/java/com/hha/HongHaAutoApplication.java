@@ -9,5 +9,5 @@ public class HongHaAutoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HongHaAutoApplication.class, args);
 	}
-	
+
 }

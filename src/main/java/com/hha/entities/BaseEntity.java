@@ -2,7 +2,7 @@ package com.hha.entities;
 
 import java.util.Date;
 
-import jakarta.persistence.Column;
+import javax.persistence.Column;
 import lombok.Data;
 @Data
 public class BaseEntity {
