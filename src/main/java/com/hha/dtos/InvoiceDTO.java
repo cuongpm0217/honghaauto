@@ -34,5 +34,7 @@ public class InvoiceDTO extends BaseDTO{
 
 	private String bankAcc1;
 
-	private String bankAcc2;		
+	private String bankAcc2;
+	
+	private String currencyId;
 }
