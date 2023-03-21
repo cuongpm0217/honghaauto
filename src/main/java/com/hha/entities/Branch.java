@@ -14,8 +14,8 @@ import lombok.Data;
 public class Branch {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long Id;
-	@Column(name = "Name")
+	private long id;
+	@Column(name = "name")
 	private String name;
 	@Column(name = "gen_Id")
 	private String genId;

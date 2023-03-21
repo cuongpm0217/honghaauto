@@ -38,7 +38,5 @@ public class Invoice extends BaseEntity{
 	@Column(name="bank_acc1")
 	private String bankAcc1;
 	@Column(name="bank_acc2")
-	private String bankAcc2; 
-	//acounting
-	
+	private String bankAcc2;		
 }
