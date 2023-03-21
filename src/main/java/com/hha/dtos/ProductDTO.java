@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 @Setter
 @Getter
-public class Product extends BaseDTO {
+public class ProductDTO extends BaseDTO {
 	
 	
 	private long Id;

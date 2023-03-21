@@ -5,12 +5,11 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class ProductType extends BaseDTO{
+public class InvoiceTypeDTO extends BaseDTO{
 	
 	
 	private long id;
 	
 	private String name;
-	//product type code
-	private String genId;
+	
 }

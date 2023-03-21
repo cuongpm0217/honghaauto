@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Branch {
+public class BranchDTO {
 	private Date createDate;
 	private String genId;
 

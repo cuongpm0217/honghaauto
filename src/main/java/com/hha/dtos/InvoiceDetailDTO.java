@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class InvoiceDetail extends BaseDTO{
+public class InvoiceDetailDTO extends BaseDTO{
 	
 	
 	private long id;

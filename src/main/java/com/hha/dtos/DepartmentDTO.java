@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Department extends BaseDTO{
+public class DepartmentDTO extends BaseDTO{
 	
 	
 	private long Id;

@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Color{
+public class ColorDTO{
 	
 	
 	private long id;

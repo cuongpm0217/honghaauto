@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class ProductGroup {
+public class ProductGroupDTO {
 	
 	private long id;
 	

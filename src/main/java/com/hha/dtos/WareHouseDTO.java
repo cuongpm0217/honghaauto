@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class WareHouse extends BaseDTO{
+public class WareHouseDTO extends BaseDTO{
 	
 	
 	private long id;

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class WareHouseItem extends BaseDTO{
+public class WareHouseItemDTO extends BaseDTO{
 	
 	
 	private long id;
