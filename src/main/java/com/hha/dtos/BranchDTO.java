@@ -97,4 +97,5 @@ public class BranchDTO {
 
 	public BranchDTO() {
 	}
+	
 }

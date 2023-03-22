@@ -7,7 +7,7 @@ import com.hha.entities.Branch;
 public interface BranchService {
 	Branch createBranch(Branch branch);
 	Branch updateBranch(long id,Branch branch);
-	boolean deleteBranch(long id);
+	void deleteBranch(long id);
 	Branch getBranchById(long id);
 	List<Branch> getAllBranch();
 }

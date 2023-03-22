@@ -39,14 +39,8 @@ public class BranchServiceImpl implements BranchService {
 	}
 
 	@Override
-	public boolean deleteBranch(long id) {
-		repo.deleteById(id);
-		Branch brc = repo.findById(id).get();
-		boolean check=false;
-		if(!Objects.nonNull(brc)||!Objects.nonNull(brc.getName())) {
-			check=true;
-		}
-		return check;
+	public void deleteBranch(long id) {
+		repo.deleteById(id);		
 	}
 
 	@Override
