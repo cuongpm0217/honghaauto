@@ -5,10 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.Data;
-
 @Entity
-@Data
 public class InvoiceDetail extends BaseEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +20,51 @@ public class InvoiceDetail extends BaseEntity{
 	private long cost;	
 	@Column
 	private String note;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public long getInvoiceId() {
+		return invoiceId;
+	}
+	public void setInvoiceId(long invoiceId) {
+		this.invoiceId = invoiceId;
+	}
+	public long getProductId() {
+		return productId;
+	}
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public long getCost() {
+		return cost;
+	}
+	public void setCost(long cost) {
+		this.cost = cost;
+	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note = note;
+	}
+	public InvoiceDetail() {}
+	public InvoiceDetail(long id, long invoiceId, long productId, int quantity, long cost, String note) {
+		super();
+		this.id = id;
+		this.invoiceId = invoiceId;
+		this.productId = productId;
+		this.quantity = quantity;
+		this.cost = cost;
+		this.note = note;
+	}
 	
 }

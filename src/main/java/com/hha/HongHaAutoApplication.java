@@ -6,13 +6,13 @@ import org.springframework.context.annotation.Bean;
 import org.modelmapper.ModelMapper;
 @SpringBootApplication
 public class HongHaAutoApplication {
-	
-	public static void main(String[] args) {
-		SpringApplication.run(HongHaAutoApplication.class, args);
-	}
 	@Bean
 	public ModelMapper modelMapper() {
 	    return new ModelMapper();
 	}
+	public static void main(String[] args) {
+		SpringApplication.run(HongHaAutoApplication.class, args);
+	}
+	
 	
 }

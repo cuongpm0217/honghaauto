@@ -5,10 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.Data;
 
 @Entity
-@Data
+
 public class Color{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,4 +18,36 @@ public class Color{
 	private String rgb;
 	@Column
 	private String code;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getRgb() {
+		return rgb;
+	}
+	public void setRgb(String rgb) {
+		this.rgb = rgb;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public Color() {}
+	public Color(long id, String name, String rgb, String code) {
+		this.id = id;
+		this.name = name;
+		this.rgb = rgb;
+		this.code = code;
+	}
+	
 }

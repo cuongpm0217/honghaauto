@@ -1,14 +1,9 @@
 package com.hha.dtos;
 
-
 import java.util.Date;
 
-import lombok.Getter;
-import lombok.Setter;
-@Getter
-@Setter
-public class EmployeeDTO extends BaseDTO{
-	
+public class EmployeeDTO extends BaseDTO {
+
 	private long id;
 
 	private String name;
@@ -35,10 +30,162 @@ public class EmployeeDTO extends BaseDTO{
 
 	private String position;
 
-	private int lever;//0-9 des
+	private int lever;// 0-9 des
 
 	private long userId;
 
 	private long depId;
-	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getGenId() {
+		return genId;
+	}
+
+	public void setGenId(String genId) {
+		this.genId = genId;
+	}
+
+	public String getNationId() {
+		return nationId;
+	}
+
+	public void setNationId(String nationId) {
+		this.nationId = nationId;
+	}
+
+	public String getTel1() {
+		return tel1;
+	}
+
+	public void setTel1(String tel1) {
+		this.tel1 = tel1;
+	}
+
+	public String getTel2() {
+		return tel2;
+	}
+
+	public void setTel2(String tel2) {
+		this.tel2 = tel2;
+	}
+
+	public Date getDOB() {
+		return DOB;
+	}
+
+	public void setDOB(Date dOB) {
+		DOB = dOB;
+	}
+
+	public String getAdd1() {
+		return add1;
+	}
+
+	public void setAdd1(String add1) {
+		this.add1 = add1;
+	}
+
+	public String getAdd2() {
+		return add2;
+	}
+
+	public void setAdd2(String add2) {
+		this.add2 = add2;
+	}
+
+	public long getSalary() {
+		return salary;
+	}
+
+	public void setSalary(long salary) {
+		this.salary = salary;
+	}
+
+	public String getBankAcc1() {
+		return bankAcc1;
+	}
+
+	public void setBankAcc1(String bankAcc1) {
+		this.bankAcc1 = bankAcc1;
+	}
+
+	public String getBankAcc2() {
+		return bankAcc2;
+	}
+
+	public void setBankAcc2(String bankAcc2) {
+		this.bankAcc2 = bankAcc2;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public int getLever() {
+		return lever;
+	}
+
+	public void setLever(int lever) {
+		this.lever = lever;
+	}
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	public long getDepId() {
+		return depId;
+	}
+
+	public void setDepId(long depId) {
+		this.depId = depId;
+	}
+
+	public EmployeeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
+			String name, String genId, String nationId, String tel1, String tel2, Date dOB, String add1, String add2,
+			long salary, String bankAcc1, String bankAcc2, String position, int lever, long userId, long depId) {
+		super(createDate, modifyDate, userCreate, userModify, branchId);
+		this.id = id;
+		this.name = name;
+		this.genId = genId;
+		this.nationId = nationId;
+		this.tel1 = tel1;
+		this.tel2 = tel2;
+		DOB = dOB;
+		this.add1 = add1;
+		this.add2 = add2;
+		this.salary = salary;
+		this.bankAcc1 = bankAcc1;
+		this.bankAcc2 = bankAcc2;
+		this.position = position;
+		this.lever = lever;
+		this.userId = userId;
+		this.depId = depId;
+	}
+
+	public EmployeeDTO() {
+	}
 }
