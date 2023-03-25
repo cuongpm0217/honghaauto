@@ -1,6 +1,9 @@
 package com.hha.controller;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -54,8 +57,9 @@ public class BranchController {
 	}
 	//list all
 	@GetMapping()
-	public List<Branch> getAllBranch(){
-		return bs.getAllBranch();
+	public List<BranchDTO> getAllBranch(){
+		List<Branch> list = bs.getAllBranch();
+		return list.stream().map(this::convert2Dto).collect(Collectors.toList());
 	}
 	//converter
 	private BranchDTO convert2Dto(Branch brc) {
