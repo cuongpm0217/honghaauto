@@ -2,13 +2,17 @@ package com.hha.dtos;
 
 import java.util.Date;
 
+import com.hha.utils.Converter;
+
 public class BaseDTO {
 	private Date createDate;
 	private Date modifyDate;
 	private long userCreate;
 	private long userModify;
 	private long branchId;
-
+	private String txtCreateDate;
+	private String txtModifyDate;
+	private Converter convert;
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -24,7 +28,23 @@ public class BaseDTO {
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
+	public String getTxtCreateDate() {
+		txtCreateDate = convert.txtDMYHH(this.createDate);
+		return txtCreateDate;
+	}
 
+	public void setTxtCreateDate(Date createDate) {
+		this.txtCreateDate = convert.txtDMYHH(createDate);
+	}
+
+	public String getTxtModifyDate() {
+		txtModifyDate = convert.txtDMYHH(this.modifyDate);
+		return txtModifyDate;
+	}
+
+	public void setTxtModifyDate(Date modifyDate) {
+		this.txtModifyDate = convert.txtDMYHH(modifyDate);
+	}
 	public long getUserCreate() {
 		return userCreate;
 	}
@@ -59,5 +79,6 @@ public class BaseDTO {
 	}
 
 	public BaseDTO() {
+		convert = new Converter();
 	}
 }

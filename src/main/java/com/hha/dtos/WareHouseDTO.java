@@ -2,20 +2,19 @@ package com.hha.dtos;
 
 import java.util.Date;
 
+import com.hha.utils.Converter;
+
 public class WareHouseDTO extends BaseDTO {
-
 	private long id;
-
 	private long productId;
-
 	private long itemTypeId;
-
 	private Date dateInput;
-
 	private Date dateOutput;
-
+	private String txtDateInput;
+	private String txtDateOutput;	
 	private long invoiceDetailId;
-
+	private Converter convert;
+	
 	public long getId() {
 		return id;
 	}
@@ -56,6 +55,24 @@ public class WareHouseDTO extends BaseDTO {
 		this.dateOutput = dateOutput;
 	}
 
+	public String getTxtDateInput() {
+		txtDateInput = convert.txtDMYHH(this.dateInput);
+		return txtDateInput;
+	}
+
+	public void setTxtDateInput(String txtDateInput) {
+		this.txtDateInput = convert.txtDMYHH(this.dateInput);
+	}
+
+	public String getTxtDateOutput() {
+		txtDateOutput = convert.txtDMYHH(this.dateOutput);
+		return txtDateOutput;
+	}
+
+	public void setTxtDateOutput(String txtDateOutput) {
+		this.txtDateOutput = convert.txtDMYHH(this.dateOutput);
+	}
+
 	public long getInvoiceDetailId() {
 		return invoiceDetailId;
 	}
@@ -76,5 +93,6 @@ public class WareHouseDTO extends BaseDTO {
 	}
 
 	public WareHouseDTO() {
+		convert = new Converter();
 	}
 }

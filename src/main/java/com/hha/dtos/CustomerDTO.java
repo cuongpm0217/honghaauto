@@ -2,6 +2,8 @@ package com.hha.dtos;
 
 import java.util.Date;
 
+import com.hha.utils.Converter;
+
 public class CustomerDTO extends BaseDTO {
 
 	private long id;
@@ -15,7 +17,9 @@ public class CustomerDTO extends BaseDTO {
 	private String tel2;
 
 	private Date DOB;
-
+	private String txtDOB;
+	private Converter convert;
+	
 	public long getId() {
 		return id;
 	}
@@ -63,6 +67,15 @@ public class CustomerDTO extends BaseDTO {
 	public void setDOB(Date dOB) {
 		DOB = dOB;
 	}
+	
+	public String getTxtDOB() {
+		txtDOB = convert.txtddMMyyyy(this.DOB);
+		return txtDOB;
+	}
+
+	public void setTxtDOB(String txtDOB) {
+		this.txtDOB = convert.txtddMMyyyy(this.DOB);
+	}
 
 	public CustomerDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
 			String name, String genId, String tel1, String tel2, Date dOB) {
@@ -76,7 +89,7 @@ public class CustomerDTO extends BaseDTO {
 	}
 
 	public CustomerDTO() {
-
+		convert = new Converter();
 	}
 
 }

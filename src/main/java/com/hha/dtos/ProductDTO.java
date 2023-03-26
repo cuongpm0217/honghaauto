@@ -2,6 +2,8 @@ package com.hha.dtos;
 
 import java.util.Date;
 
+import com.hha.utils.Converter;
+
 public class ProductDTO extends BaseDTO {
 
 	private long Id;
@@ -27,7 +29,17 @@ public class ProductDTO extends BaseDTO {
 	private Date expiry;
 
 	private long partnerId;
+	private String txtExpiry;
+	private Converter convert;
 
+	public String getTxtExpiry() {
+		txtExpiry = convert.txtddMMyyyy(this.expiry);
+		return txtExpiry;
+	}
+
+	public void setTxtExpiry(String txtExpiry) {
+		this.txtExpiry = convert.txtddMMyyyy(this.expiry);
+	}
 	public long getId() {
 		return Id;
 	}
@@ -143,5 +155,6 @@ public class ProductDTO extends BaseDTO {
 	}
 
 	public ProductDTO() {
+		convert = new Converter();
 	}
 }

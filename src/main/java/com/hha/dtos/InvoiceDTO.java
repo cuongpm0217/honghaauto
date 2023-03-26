@@ -2,6 +2,8 @@ package com.hha.dtos;
 
 import java.util.Date;
 
+import com.hha.utils.Converter;
+
 public class InvoiceDTO extends BaseDTO {
 
 	private long id;
@@ -31,6 +33,28 @@ public class InvoiceDTO extends BaseDTO {
 	private String bankAcc2;
 
 	private String currencyId;
+	private String txtStartedDate;
+	private String txtEndDate;
+	private Converter convert;
+
+	public String getTxtStartedDate() {
+		txtStartedDate = convert.txtDMYHH(this.startedDate);
+		return txtStartedDate;
+	}
+
+	public void setTxtStartedDate(String txtStartedDate) {
+		this.txtStartedDate = convert.txtDMYHH(this.startedDate);
+	}
+
+	
+	public String getTxtEndDate() {
+		txtEndDate = convert.txtDMYHH(this.endDate);
+		return txtEndDate;
+	}
+
+	public void setTxtEndDate(String txtEndDate) {
+		this.txtEndDate = convert.txtDMYHH(this.endDate);
+	}
 
 	public long getId() {
 		return id;
@@ -165,5 +189,7 @@ public class InvoiceDTO extends BaseDTO {
 	}
 
 	public InvoiceDTO() {
+		convert = new Converter();
 	}
+	
 }

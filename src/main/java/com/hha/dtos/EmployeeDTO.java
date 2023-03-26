@@ -2,39 +2,36 @@ package com.hha.dtos;
 
 import java.util.Date;
 
+import com.hha.utils.Converter;
+
 public class EmployeeDTO extends BaseDTO {
-
 	private long id;
-
 	private String name;
-
 	private String genId;
-
 	private String nationId;
-
 	private String tel1;
-
 	private String tel2;
-
 	private Date DOB;
-
 	private String add1;
-
 	private String add2;
-
 	private long salary;
-
 	private String bankAcc1;
-
 	private String bankAcc2;
-
 	private String position;
-
 	private int lever;// 0-9 des
-
 	private long userId;
-
 	private long depId;
+	private String txtDOB;
+	private Converter convert;
+
+	public String getTxtDOB() {
+		txtDOB = convert.txtddMMyyyy(this.DOB);
+		return txtDOB;
+	}
+
+	public void setTxtDOB(String txtDOB) {
+		this.txtDOB = convert.txtddMMyyyy(this.DOB);
+	}
 
 	public long getId() {
 		return id;
@@ -187,5 +184,6 @@ public class EmployeeDTO extends BaseDTO {
 	}
 
 	public EmployeeDTO() {
+		convert = new Converter();
 	}
 }
