@@ -63,6 +63,14 @@ public class User {
 		this.email = email;
 	}
 
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
 	public User(String userName, String passWord, String email) {
 		super();
 		this.userName = userName;
