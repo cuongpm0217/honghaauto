@@ -17,15 +17,7 @@ public class Account extends BaseEntity{
 	private String name;
 	@Column
 	private int lever;//0-2:sub-account, account example: 131,1311
-	@Column(name="is_enable")
-	private boolean isEnable;
 	
-	public boolean isEnable() {
-		return isEnable;
-	}
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
 	public long getId() {
 		return id;
 	}
@@ -57,5 +49,7 @@ public class Account extends BaseEntity{
 		this.name = name;
 		this.lever = lever;
 	}
+	
+
 	
 }

@@ -6,8 +6,14 @@ import com.hha.entities.WareHouseItem;
 
 public interface WareHouseItemService {
 	WareHouseItem create(WareHouseItem whi);
-	WareHouseItem update(long id,WareHouseItem whi);
-	boolean delete(long id);
+
+	WareHouseItem update(long id, WareHouseItem whi);
+
+	void delete(long id);
+
+	void hidden(long id);
+
 	WareHouseItem getById(long id);
+
 	List<WareHouseItem> getAll();
 }

@@ -5,14 +5,11 @@ import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.hha.entities.Branch;
 import com.hha.repository.BranchRepository;
 import com.hha.services.BranchService;
 
 @Service
-@Transactional
 public class BranchServiceImpl implements BranchService {
 	@Autowired
 	private BranchRepository repo;
@@ -26,7 +23,7 @@ public class BranchServiceImpl implements BranchService {
 	@Override
 	public Branch updateBranch(long id, Branch branch) {
 		Branch brc = repo.findById(id).get();
-		if (Objects.nonNull(brc)) {
+		if (Objects.nonNull(brc)||Objects.nonNull(branch)) {
 			brc.setCreateDate(branch.getCreateDate());
 			brc.setGenId(branch.getGenId());
 			brc.setId(branch.getId());
@@ -36,7 +33,7 @@ public class BranchServiceImpl implements BranchService {
 			brc.setUserCreate(branch.getUserCreate());
 			brc.setUserModify(branch.getUserModify());
 		}
-		return brc;
+		return repo.save(brc);
 	}
 
 	@Override
@@ -51,8 +48,7 @@ public class BranchServiceImpl implements BranchService {
 	}
 
 	@Override
-	public List<Branch> getAllBranch() {
-		
+	public List<Branch> getAllBranch() {		
 		return (List<Branch>)repo.findAll();
 	}
 
@@ -62,7 +58,7 @@ public class BranchServiceImpl implements BranchService {
 		if(Objects.nonNull(brc)) {
 			brc.setEnable(false);
 		}
-		
+		repo.save(brc);
 	}
 
 }

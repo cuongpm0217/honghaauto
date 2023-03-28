@@ -6,8 +6,14 @@ import com.hha.entities.InvoiceType;
 
 public interface InvoiceTypeService {
 	InvoiceType create(InvoiceType invT);
-	InvoiceType update(long id,InvoiceType invT);
-	boolean delete(long id);
+
+	InvoiceType update(long id, InvoiceType invT);
+
+	void delete(long id);
+
+	void hidden(long id);
+
 	InvoiceType getById(long id);
+
 	List<InvoiceType> getAll();
 }
