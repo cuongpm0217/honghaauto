@@ -19,6 +19,7 @@ public class BranchServiceImpl implements BranchService {
 
 	@Override
 	public Branch createBranch(Branch branch) {
+		branch.setEnable(true);
 		return repo.save(branch);
 	}
 
@@ -53,6 +54,15 @@ public class BranchServiceImpl implements BranchService {
 	public List<Branch> getAllBranch() {
 		
 		return (List<Branch>)repo.findAll();
+	}
+
+	@Override
+	public void hiddenBranch(long id) {
+		Branch brc = repo.findById(id).get();
+		if(Objects.nonNull(brc)) {
+			brc.setEnable(false);
+		}
+		
 	}
 
 }

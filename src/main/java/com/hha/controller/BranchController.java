@@ -43,9 +43,15 @@ public class BranchController {
 		return "Update Branch "+id.toString()+" success";
 	} 
 	//delete
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/deleted/{id}")
 	public String deleteBranch(@PathVariable("id") Long id) {
 		bs.deleteBranch(id);
+		return "Delete in db success";
+	}
+	//hidden
+	@PutMapping("/delete/{id}")
+	public String hiddenBranch(@PathVariable("id") Long id) {
+		bs.hiddenBranch(id);
 		return "Delete success";
 	}
 	//get one
