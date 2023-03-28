@@ -44,11 +44,12 @@ public class Currency {
 		this.name = name;
 	}
 	public Currency() {}
-	public Currency(long id, String code, String name) {
+	public Currency(long id, String code, String name,boolean isEnable) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.name = name;
+		this.isEnable = isEnable;
 	}
 	
 }

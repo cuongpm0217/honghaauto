@@ -5,8 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
-public class Partner extends BaseEntity{
+public class Partner extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -20,51 +21,55 @@ public class Partner extends BaseEntity{
 	private String add1;
 	@Column
 	private String add2;
-	@Column(name="is_enable")
-	private boolean isEnable;
-	
-	public boolean isEnable() {
-		return isEnable;
-	}
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getTel1() {
 		return tel1;
 	}
+
 	public void setTel1(String tel1) {
 		this.tel1 = tel1;
 	}
+
 	public String getTel2() {
 		return tel2;
 	}
+
 	public void setTel2(String tel2) {
 		this.tel2 = tel2;
 	}
+
 	public String getAdd1() {
 		return add1;
 	}
+
 	public void setAdd1(String add1) {
 		this.add1 = add1;
 	}
+
 	public String getAdd2() {
 		return add2;
 	}
+
 	public void setAdd2(String add2) {
 		this.add2 = add2;
 	}
+
 	public Partner(long id, String name, String tel1, String tel2, String add1, String add2) {
 		super();
 		this.id = id;
@@ -74,5 +79,7 @@ public class Partner extends BaseEntity{
 		this.add1 = add1;
 		this.add2 = add2;
 	}
-	public Partner() {}
+
+	public Partner() {
+	}
 }

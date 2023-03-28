@@ -52,11 +52,12 @@ public class Color{
 		this.code = code;
 	}
 	public Color() {}
-	public Color(long id, String name, String rgb, String code) {
+	public Color(long id, String name, String rgb, String code,boolean isEnable) {
 		this.id = id;
 		this.name = name;
 		this.rgb = rgb;
 		this.code = code;
+		this.isEnable = isEnable;
 	}
 	
 }

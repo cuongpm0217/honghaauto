@@ -23,7 +23,7 @@ public class EmployeeDTO extends BaseDTO {
 	private long depId;
 	private String txtDOB;
 	private Converter convert;
-
+	
 	public String getTxtDOB() {
 		txtDOB = convert.txtddMMyyyy(this.DOB);
 		return txtDOB;
@@ -161,10 +161,10 @@ public class EmployeeDTO extends BaseDTO {
 		this.depId = depId;
 	}
 
-	public EmployeeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
+	public EmployeeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,boolean isEnable, long id,
 			String name, String genId, String nationId, String tel1, String tel2, Date dOB, String add1, String add2,
 			long salary, String bankAcc1, String bankAcc2, String position, int lever, long userId, long depId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId);
+		super(createDate, modifyDate, userCreate, userModify, branchId,isEnable);
 		this.id = id;
 		this.name = name;
 		this.genId = genId;

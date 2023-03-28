@@ -87,7 +87,7 @@ public class Branch {
 		
 	}
 	public Branch(long id, String name, String genId, int lever, Date createDate, Date modifyDate, long userCreate,
-			long userModify) {
+			long userModify, boolean isEnable) {
 		this.id = id;
 		this.name = name;
 		this.genId = genId;
@@ -96,6 +96,7 @@ public class Branch {
 		this.modifyDate = modifyDate;
 		this.userCreate = userCreate;
 		this.userModify = userModify;
+		this.isEnable = isEnable;
 	}
 	
 }

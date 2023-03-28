@@ -24,9 +24,9 @@ public class InvoiceTypeDTO extends BaseDTO {
 		this.name = name;
 	}
 
-	public InvoiceTypeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
-			String name) {
-		super(createDate, modifyDate, userCreate, userModify, branchId);
+	public InvoiceTypeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
+			boolean isEnable, long id, String name) {
+		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
 		this.id = id;
 		this.name = name;
 	}

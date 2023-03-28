@@ -44,15 +44,6 @@ public class Employee extends BaseEntity{
 	private long userId;
 	@Column(name="dep_id")
 	private long depId;
-	@Column(name="is_enable")
-	private boolean isEnable;
-	
-	public boolean isEnable() {
-		return isEnable;
-	}
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
 	public long getId() {
 		return id;
 	}

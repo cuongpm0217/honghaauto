@@ -9,7 +9,7 @@ public class AccountDTO extends BaseDTO {
 	private String name;
 
 	private int lever;// 0-2:sub-account, account example: 131,1311
-
+	
 	public long getId() {
 		return id;
 	}
@@ -43,7 +43,6 @@ public class AccountDTO extends BaseDTO {
 	}
 
 	public AccountDTO(long id, String code, String name, int lever) {
-		super();
 		this.id = id;
 		this.code = code;
 		this.name = name;

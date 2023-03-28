@@ -19,12 +19,21 @@ public class BranchDTO {
 	private long userCreate;
 
 	private long userModify;
-	
+
 	private Converter convert;
-	
+
 	private String txtCreateDate;
-	
+
 	private String txtModifyDate;
+	private boolean isEnable;
+
+	public boolean isEnable() {
+		return isEnable;
+	}
+
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}
 
 	public Date getCreateDate() {
 		return createDate;
@@ -63,7 +72,7 @@ public class BranchDTO {
 	}
 
 	public void setModifyDate(Date modifyDate) {
-		
+
 		this.modifyDate = modifyDate;
 	}
 
@@ -90,8 +99,7 @@ public class BranchDTO {
 	public void setUserModify(long userModify) {
 		this.userModify = userModify;
 	}
-	
-	
+
 	public String getTxtCreateDate() {
 		txtCreateDate = convert.txtDMYHH(this.createDate);
 		return txtCreateDate;
@@ -126,5 +134,5 @@ public class BranchDTO {
 	public BranchDTO() {
 		convert = new Converter();
 	}
-	
+
 }

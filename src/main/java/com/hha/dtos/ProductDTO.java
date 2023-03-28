@@ -40,6 +40,7 @@ public class ProductDTO extends BaseDTO {
 	public void setTxtExpiry(String txtExpiry) {
 		this.txtExpiry = convert.txtddMMyyyy(this.expiry);
 	}
+
 	public long getId() {
 		return Id;
 	}
@@ -136,10 +137,10 @@ public class ProductDTO extends BaseDTO {
 		this.partnerId = partnerId;
 	}
 
-	public ProductDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
-			String name, String genId, long typeId, long colorId, long groupId, long costIn, long costOut,
-			long imageGroupId, int guarantee, Date expiry, long partnerId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId);
+	public ProductDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
+			boolean isEnable, long id, String name, String genId, long typeId, long colorId, long groupId, long costIn,
+			long costOut, long imageGroupId, int guarantee, Date expiry, long partnerId) {
+		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
 		Id = id;
 		this.name = name;
 		this.genId = genId;

@@ -1,6 +1,8 @@
 package com.hha.dtos;
 
-public class ProductGroupDTO {
+import java.util.Date;
+
+public class ProductGroupDTO extends BaseDTO {
 
 	private long id;
 
@@ -32,13 +34,15 @@ public class ProductGroupDTO {
 		this.genId = genId;
 	}
 
-	public ProductGroupDTO(long id, String name, String genId) {
-		super();
+	public ProductGroupDTO() {
+	}
+
+	public ProductGroupDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
+			boolean isEnable, long id, String name, String genId) {
+		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
 		this.id = id;
 		this.name = name;
 		this.genId = genId;
 	}
-
-	public ProductGroupDTO() {
-	}
+	
 }

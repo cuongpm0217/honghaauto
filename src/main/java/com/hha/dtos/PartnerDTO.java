@@ -64,9 +64,9 @@ public class PartnerDTO extends BaseDTO {
 		this.add2 = add2;
 	}
 
-	public PartnerDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
-			String name, String tel1, String tel2, String add1, String add2) {
-		super(createDate, modifyDate, userCreate, userModify, branchId);
+	public PartnerDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
+			boolean isEnable, long id, String name, String tel1, String tel2, String add1, String add2) {
+		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
 		this.id = id;
 		this.name = name;
 		this.tel1 = tel1;

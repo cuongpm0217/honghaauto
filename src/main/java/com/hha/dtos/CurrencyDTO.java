@@ -6,6 +6,15 @@ public class CurrencyDTO {
 	private String code;// exp:VND ...
 
 	private String name;// Vietnam Dong
+	private boolean isEnable;
+
+	public boolean isEnable() {
+		return isEnable;
+	}
+
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}
 
 	public long getId() {
 		return id;
@@ -31,11 +40,12 @@ public class CurrencyDTO {
 		this.name = name;
 	}
 
-	public CurrencyDTO(long id, String code, String name) {
+	public CurrencyDTO(long id, String code, String name,boolean isEnable) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.name = name;
+		this.isEnable = isEnable;
 	}
 
 	public CurrencyDTO() {

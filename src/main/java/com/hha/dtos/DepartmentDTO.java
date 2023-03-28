@@ -34,9 +34,9 @@ public class DepartmentDTO extends BaseDTO {
 		this.depGenId = depGenId;
 	}
 
-	public DepartmentDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
+	public DepartmentDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, boolean isEnable, long id,
 			String depName, String depGenId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId);
+		super(createDate, modifyDate, userCreate, userModify, branchId,isEnable);
 		this.id = id;
 		this.depName = depName;
 		this.depGenId = depGenId;

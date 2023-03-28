@@ -64,9 +64,9 @@ public class InvoiceDetailDTO extends BaseDTO {
 		this.note = note;
 	}
 
-	public InvoiceDetailDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
-			long invoiceId, long productId, int quantity, long cost, String note) {
-		super(createDate, modifyDate, userCreate, userModify, branchId);
+	public InvoiceDetailDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
+			boolean isEnable, long id, long invoiceId, long productId, int quantity, long cost, String note) {
+		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
 		this.id = id;
 		this.invoiceId = invoiceId;
 		this.productId = productId;

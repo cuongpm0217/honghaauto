@@ -64,9 +64,10 @@ public class InvoiceAccountDTO extends BaseDTO {
 		this.debitBalance = debitBalance;
 	}
 
-	public InvoiceAccountDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
-			long invoiceId, long accountCreditId, long creditBalance, long accountDebitId, long debitBalance) {
-		super(createDate, modifyDate, userCreate, userModify, branchId);
+	public InvoiceAccountDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
+			boolean isEnable, long id, long invoiceId, long accountCreditId, long creditBalance, long accountDebitId,
+			long debitBalance) {
+		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
 		this.id = id;
 		this.invoiceId = invoiceId;
 		this.accountCreditId = accountCreditId;

@@ -36,6 +36,15 @@ public class InvoiceDTO extends BaseDTO {
 	private String txtStartedDate;
 	private String txtEndDate;
 	private Converter convert;
+	private boolean isEnable;
+
+	public boolean isEnable() {
+		return isEnable;
+	}
+
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}
 
 	public String getTxtStartedDate() {
 		txtStartedDate = convert.txtDMYHH(this.startedDate);
@@ -46,7 +55,6 @@ public class InvoiceDTO extends BaseDTO {
 		this.txtStartedDate = convert.txtDMYHH(this.startedDate);
 	}
 
-	
 	public String getTxtEndDate() {
 		txtEndDate = convert.txtDMYHH(this.endDate);
 		return txtEndDate;
@@ -168,10 +176,10 @@ public class InvoiceDTO extends BaseDTO {
 		this.currencyId = currencyId;
 	}
 
-	public InvoiceDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, long id,
+	public InvoiceDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,boolean isEnable, long id,
 			long typeId, long cusId, long empId, String tittle, long total, Date startedDate, Date endDate,
 			String logoUrl, String telBranch, String addBranch, String bankAcc1, String bankAcc2, String currencyId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId);
+		super(createDate, modifyDate, userCreate, userModify, branchId,isEnable);
 		this.id = id;
 		this.typeId = typeId;
 		this.cusId = cusId;
@@ -191,5 +199,5 @@ public class InvoiceDTO extends BaseDTO {
 	public InvoiceDTO() {
 		convert = new Converter();
 	}
-	
+
 }

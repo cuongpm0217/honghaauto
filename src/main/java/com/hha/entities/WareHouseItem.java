@@ -14,15 +14,7 @@ public class WareHouseItem extends BaseEntity {
 	private long id;
 	@Column
 	private String name;// Fixed assets,accessary ,equipment
-	@Column(name="is_enable")
-	private boolean isEnable;
-	
-	public boolean isEnable() {
-		return isEnable;
-	}
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
+
 	public long getId() {
 		return id;
 	}
@@ -39,8 +31,7 @@ public class WareHouseItem extends BaseEntity {
 		this.name = name;
 	}
 
-	public WareHouseItem(long id, String name) {
-		super();
+	public WareHouseItem(long id, String name) {		
 		this.id = id;
 		this.name = name;
 	}
