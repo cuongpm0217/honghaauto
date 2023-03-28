@@ -18,7 +18,15 @@ public class Currency {
 	private String name;//VietNamDong
 	@Column(name="is_enable")
 	private boolean isEnable;
+	@Column(name="rate")//exchange rate
+	private double rate;
 	
+	public double getRate() {
+		return rate;
+	}
+	public void setRate(double rate) {
+		this.rate = rate;
+	}
 	public boolean isEnable() {
 		return isEnable;
 	}
@@ -44,12 +52,14 @@ public class Currency {
 		this.name = name;
 	}
 	public Currency() {}
-	public Currency(long id, String code, String name,boolean isEnable) {
+	public Currency(long id, String code, String name, boolean isEnable, double rate) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.name = name;
 		this.isEnable = isEnable;
+		this.rate = rate;
 	}
+	
 	
 }
