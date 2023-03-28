@@ -26,6 +26,8 @@ public class Branch {
 	private long userCreate;
 	@Column(name = "user_modify")
 	private long userModify;
+	@Column(name="is_enable")
+	private boolean isEnable;
 	public long getId() {
 		return id;
 	}
@@ -73,6 +75,13 @@ public class Branch {
 	}
 	public void setUserModify(long userModify) {
 		this.userModify = userModify;
+	}
+	
+	public boolean isEnable() {
+		return isEnable;
+	}
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
 	}
 	public Branch() {
 		

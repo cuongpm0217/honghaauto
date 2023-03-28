@@ -14,6 +14,15 @@ public class ProductGroup {
 	private String name;
 	@Column(name="gen_id")//code
 	private String genId;
+	@Column(name="is_enable")
+	private boolean isEnable;
+	
+	public boolean isEnable() {
+		return isEnable;
+	}
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}
 	public long getId() {
 		return id;
 	}

@@ -41,6 +41,15 @@ public class Invoice extends BaseEntity{
 	private String bankAcc2;
 	@Column(name="currency_id")
 	private long currencyId;
+	@Column(name="is_enable")
+	private boolean isEnable;
+	
+	public boolean isEnable() {
+		return isEnable;
+	}
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}
 	public long getId() {
 		return id;
 	}

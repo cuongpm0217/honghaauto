@@ -23,6 +23,15 @@ public class Customer extends BaseEntity{
 	private String tel2;
 	@Column(name="dob")
 	private Date DOB;
+	@Column(name="is_enable")
+	private boolean isEnable;
+	
+	public boolean isEnable() {
+		return isEnable;
+	}
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}
 	public long getId() {
 		return id;
 	}

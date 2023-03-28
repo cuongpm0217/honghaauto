@@ -13,7 +13,15 @@ public class Role {
 	private long id;
 	@Column(nullable = false, unique = true)
 	private String name;
-
+	@Column(name="is_enable")
+	private boolean isEnable;
+	
+	public boolean isEnable() {
+		return isEnable;
+	}
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}
 	public long getId() {
 		return id;
 	}

@@ -15,7 +15,16 @@ public class Currency {
 	@Column
 	private String code;//exp:VND ...
 	@Column
-	private String name;//Vietnam Dong
+	private String name;//VietNamDong
+	@Column(name="is_enable")
+	private boolean isEnable;
+	
+	public boolean isEnable() {
+		return isEnable;
+	}
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}	
 	public long getId() {
 		return id;
 	}

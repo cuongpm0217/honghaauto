@@ -13,8 +13,16 @@ public class WareHouseItem extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column
-	private String name;// Fixed assets,accessary,equipment
-
+	private String name;// Fixed assets,accessary ,equipment
+	@Column(name="is_enable")
+	private boolean isEnable;
+	
+	public boolean isEnable() {
+		return isEnable;
+	}
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}
 	public long getId() {
 		return id;
 	}
