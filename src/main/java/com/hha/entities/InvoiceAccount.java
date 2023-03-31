@@ -76,7 +76,6 @@ public class InvoiceAccount extends BaseEntity {
 
 	public InvoiceAccount(long id, long invoiceId, long accountCreditId, long creditBalance, long accountDebitId,
 			long debitBalance) {
-		super();
 		this.id = id;
 		this.invoiceId = invoiceId;
 		this.accountCreditId = accountCreditId;

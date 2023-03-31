@@ -74,7 +74,6 @@ public class InvoiceDetail extends BaseEntity {
 	}
 
 	public InvoiceDetail(long id, long invoiceId, long productId, int quantity, long cost, String note) {
-		super();
 		this.id = id;
 		this.invoiceId = invoiceId;
 		this.productId = productId;

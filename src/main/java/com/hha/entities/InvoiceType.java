@@ -34,7 +34,6 @@ public class InvoiceType extends BaseEntity {
 	}
 
 	public InvoiceType(long id, String name) {
-		super();
 		this.id = id;
 		this.name = name;
 	}

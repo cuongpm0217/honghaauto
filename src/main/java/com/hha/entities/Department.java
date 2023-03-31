@@ -34,8 +34,7 @@ public class Department extends BaseEntity{
 		this.depGenId = depGenId;
 	}
 	public Department() {}
-	public Department(long id, String depName, String depGenId) {
-		super();
+	public Department(long id, String depName, String depGenId) {		
 		this.id = id;
 		this.depName = depName;
 		this.depGenId = depGenId;
