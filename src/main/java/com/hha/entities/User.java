@@ -1,6 +1,5 @@
 package com.hha.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -38,8 +37,8 @@ public class User {
 	@Autowired
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private List<Role> roles = new ArrayList<>();
-
+	private List<Role> roles;	
+	
 	public long getId() {
 		return id;
 	}
