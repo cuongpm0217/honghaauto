@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hha.dtos.BranchDTO;
 import com.hha.entities.Branch;
 import com.hha.entities.Module;
+import com.hha.entities.ModuleDetail;
 import com.hha.services.BranchService;
+import com.hha.services.ModuleDetailService;
 import com.hha.services.ModuleService;
 
 @RestController
@@ -30,6 +32,8 @@ public class BranchController {
 	@Autowired
 	private ModuleService ms;
 	@Autowired
+	private ModuleDetailService mds;
+	@Autowired
 	private ModelMapper mapper;
 
 	// add
@@ -37,9 +41,8 @@ public class BranchController {
 	public BranchDTO createBranch(@Validated @RequestBody BranchDTO bDto) {
 		Branch brc = convert2Entity(bDto);
 		Branch brcCreated = bs.createBranch(brc);
-		// set module name
-		String moduleName = "branch_add";
-		setModule(moduleName);
+		// set module name		
+		setModuleDetail("add");
 		return convert2Dto(brcCreated);
 	}
 
@@ -49,8 +52,7 @@ public class BranchController {
 		Branch brc = convert2Entity(bDto);
 		bs.updateBranch(id, brc);
 		// set module name
-		String moduleName = "branch_update";
-		setModule(moduleName);
+		setModuleDetail("update");
 		return "Update Branch " + id.toString() + " success";
 	}
 
@@ -58,8 +60,7 @@ public class BranchController {
 	@DeleteMapping("/deleted/{id}")
 	public String deleteBranch(@PathVariable("id") Long id) {
 		// set module name
-		String moduleName = "branch_delete";
-		setModule(moduleName);
+		setModuleDetail("delete");
 		bs.deleteBranch(id);
 		return "Delete in db success";
 	}
@@ -68,8 +69,7 @@ public class BranchController {
 	@PutMapping("/delete/{id}")
 	public String hiddenBranch(@PathVariable("id") Long id) {
 		// set module name
-		String moduleName = "branch_hidden";
-		setModule(moduleName);
+		setModuleDetail("hidden");		
 		bs.hiddenBranch(id);
 		return "Delete success";
 	}
@@ -79,8 +79,7 @@ public class BranchController {
 	public BranchDTO getBranch(@PathVariable("id ") Long id) {
 		Branch brc = bs.getBranchById(id);
 		// set module name
-		String moduleName = "branch_getone";
-		setModule(moduleName);
+		setModuleDetail("get_one");
 		return convert2Dto(brc);
 	}
 
@@ -88,22 +87,30 @@ public class BranchController {
 	@GetMapping()
 	public List<BranchDTO> getAllBranch() {
 		List<Branch> list = bs.getAllBranch();
-		String moduleName = "branch_list";
-		setModule(moduleName);
+		setModuleDetail("list");
 		return list.stream().map(this::convert2Dto).collect(Collectors.toList());
 	}
 
 	// set module name
-	private void setModule(String moduleName) {
-		Module m = ms.getByName(moduleName);
-		if (m == null) {
-			m = new Module();
-			m.setName(moduleName);
-			m.setCreateDate(new Date());
-			m.setEnable(true);
-			ms.create(m);
+		private void setModuleDetail(String moduleDetailName) {
+			String moduleName = "branch";
+			Module moduleSelect =  ms.getByName(moduleName );
+			if (moduleSelect == null) {
+				moduleSelect = new Module();
+				moduleSelect.setName(moduleName);
+				moduleSelect.setCreateDate(new Date());
+				moduleSelect.setEnable(true);				
+				ms.create(moduleSelect);			
+				ModuleDetail md = mds.getByName(moduleSelect.getId(), moduleDetailName);
+				if (md == null) {
+					md = new ModuleDetail();
+					md.setName(moduleDetailName);
+					md.setCreateDate(new Date());
+					md.setEnable(true);
+					mds.create(md, moduleSelect.getId());
+				}
+			}			
 		}
-	}
 
 	// converter
 	private BranchDTO convert2Dto(Branch brc) {
