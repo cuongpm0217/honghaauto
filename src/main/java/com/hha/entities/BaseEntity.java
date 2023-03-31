@@ -3,20 +3,33 @@ package com.hha.entities;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-public class BaseEntity {
-	@Column(name = "create_date")
-	private Date createDate;
-	@Column(name = "modify_date")
-	private Date modifyDate;
-	@Column(name = "user_create")
-	private long userCreate;
-	@Column(name = "user_modify")
-	private long userModify;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+public abstract class BaseEntity {
+	@CreatedDate
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date createDate;
+	@LastModifiedDate
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date modifyDate;
+	@CreatedBy
+	protected long userCreate;
+	@LastModifiedBy
+	protected long userModify;
 	@Column(name = "branch_id")
-	private long branchId;
+	protected long branchId;
 	@Column(name="is_enable")
-	private boolean isEnable;
+	protected boolean isEnable;
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -47,25 +60,24 @@ public class BaseEntity {
 	public void setBranchId(long branchId) {
 		this.branchId = branchId;
 	}
-	
 	public boolean isEnable() {
 		return isEnable;
 	}
 	public void setEnable(boolean isEnable) {
 		this.isEnable = isEnable;
 	}
-	public BaseEntity()
-	{		
-	}
 	public BaseEntity(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
 			boolean isEnable) {
-		super();
+		
 		this.createDate = createDate;
 		this.modifyDate = modifyDate;
 		this.userCreate = userCreate;
 		this.userModify = userModify;
 		this.branchId = branchId;
 		this.isEnable = isEnable;
+	}
+	public BaseEntity() {
+		
 	}
 	
 	
