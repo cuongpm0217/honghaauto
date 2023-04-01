@@ -9,7 +9,7 @@ public interface InvoiceAccountService {
 
 	InvoiceAccount updateInvoiceAccount(long id, InvoiceAccount ia);
 
-	void deleteInvoiceAccount(InvoiceAccount ia);
+	void deleteInvoiceAccount(long id);
 
 	boolean hidden(long id);
 
