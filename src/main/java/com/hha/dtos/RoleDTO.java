@@ -1,9 +1,11 @@
 package com.hha.dtos;
 
-public class RoleDTO {
+import java.util.Date;
+
+public class RoleDTO extends BaseDTO {
 	private long id;
 	private String name;
-	private boolean isEnable;
+
 	public long getId() {
 		return id;
 	}
@@ -20,22 +22,18 @@ public class RoleDTO {
 		this.name = name;
 	}
 	
-	public boolean isEnable() {
-		return isEnable;
-	}
-
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
-
 	public RoleDTO() {
 	}
 
-	public RoleDTO(long id, String name, boolean isEnable) {
+	public RoleDTO(long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.isEnable = isEnable;
 	}
 
+	public RoleDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, boolean isEnable, long id, String name) {
+		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
+		this.id = id;
+		this.name = name;
+	}
 }

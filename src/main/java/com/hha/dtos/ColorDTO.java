@@ -1,7 +1,6 @@
 package com.hha.dtos;
 
-public class ColorDTO {
-
+public class ColorDTO extends BaseDTO{
 	private long id;
 
 	private String name;
@@ -9,15 +8,7 @@ public class ColorDTO {
 	private String rgb;
 
 	private String code;
-	private boolean isEnable;
 
-	public boolean isEnable() {
-		return isEnable;
-	}
-
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
 	public long getId() {
 		return id;
 	}
@@ -50,13 +41,12 @@ public class ColorDTO {
 		this.code = code;
 	}
 
-	public ColorDTO(long id, String name, String rgb, String code,boolean isEnable) {
+	public ColorDTO(long id, String name, String rgb, String code) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.rgb = rgb;
 		this.code = code;
-		this.isEnable = isEnable;
 	}
 
 	public ColorDTO() {

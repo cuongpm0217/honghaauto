@@ -1,8 +1,8 @@
 package com.hha.dtos;
 
-import java.util.Date;
-
 import com.hha.utils.Converter;
+
+import java.util.Date;
 
 public class EmployeeDTO extends BaseDTO {
 	private long id;

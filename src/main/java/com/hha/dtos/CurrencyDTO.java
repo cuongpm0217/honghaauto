@@ -1,6 +1,6 @@
 package com.hha.dtos;
 
-public class CurrencyDTO {
+public class CurrencyDTO extends BaseDTO{
 	private long id;
 
 	private String code;// exp:VND ...

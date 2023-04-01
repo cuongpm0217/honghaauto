@@ -1,11 +1,11 @@
 package com.hha.dtos;
 
-import java.util.Date;
-
 import com.hha.utils.Converter;
 
-public class BaseDTO {
-	private Date createDate;
+import java.util.Date;
+
+public abstract class BaseDTO {
+	protected Date createDate;
 	private Date modifyDate;
 	private long userCreate;
 	private long userModify;
