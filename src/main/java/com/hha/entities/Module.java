@@ -12,7 +12,7 @@ public class Module extends BaseEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@Column
+	@Column(unique=true)
 	private String name;
 	
 	public long getId() {
