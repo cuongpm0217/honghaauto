@@ -62,8 +62,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public List<Customer> getCustomerByText(String txtSearch) {
-		// TODO Auto-generated method stub
+	public List<Customer> getCustomerByText(String txtSearch) {	
 		return repo.findByTxt(txtSearch);
 	}
 }

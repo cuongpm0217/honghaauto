@@ -1,6 +1,13 @@
 package com.hha.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+
+import javax.persistence.Enumerated;
+import javax.persistence.EnumType;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
 
 @Entity
 public class Role extends BaseEntity{

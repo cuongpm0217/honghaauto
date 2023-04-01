@@ -1,9 +1,12 @@
 package com.hha.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-
 public class Currency extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +15,6 @@ public class Currency extends BaseEntity {
 	private String code;// exp:VND ...
 	@Column
 	private String name;// VietNamDong
-
 	@Column(name = "rate") // exchange rate
 	private double rate;
 

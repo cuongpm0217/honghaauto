@@ -1,6 +1,10 @@
 package com.hha.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
 import java.util.Date;
 
 @Entity
@@ -22,8 +26,10 @@ public class Product extends BaseEntity {
 	private long costIn;
 	@Column(name = "cost_out")
 	private long costOut;
-	@Column(name = "image_group_id")
-	private long imageGroupId;
+	@Column(name = "images_id")
+	private long imagesId;
+	@Column(name="videos_id")
+	private long videosId;
 	@Column(name = "guarantee")
 	private int guarantee;// by month
 	@Column(name = "expiry")
@@ -95,14 +101,6 @@ public class Product extends BaseEntity {
 		this.costOut = costOut;
 	}
 
-	public long getImageGroupId() {
-		return imageGroupId;
-	}
-
-	public void setImageGroupId(long imageGroupId) {
-		this.imageGroupId = imageGroupId;
-	}
-
 	public int getGuarantee() {
 		return guarantee;
 	}
@@ -128,7 +126,7 @@ public class Product extends BaseEntity {
 	}
 
 	public Product(long id, String name, String genId, long typeId, long colorId, long groupId, long costIn,
-			long costOut, long imageGroupId, int guarantee, Date expiry, long partnerId) {
+			long costOut, long imagesId, int guarantee, Date expiry, long partnerId) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -138,7 +136,7 @@ public class Product extends BaseEntity {
 		this.groupId = groupId;
 		this.costIn = costIn;
 		this.costOut = costOut;
-		this.imageGroupId = imageGroupId;
+		this.imagesId = imagesId;
 		this.guarantee = guarantee;
 		this.expiry = expiry;
 		this.partnerId = partnerId;
