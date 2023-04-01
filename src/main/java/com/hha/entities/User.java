@@ -24,9 +24,9 @@ public class User extends BaseEntity{
 	private long id;
 	@Column(name = "user_name", nullable = false, unique = true)
 	private String userName;
-	@Column(name = "pass_word", nullable = false, unique = true)
+	@Column(name = "pass_word", nullable = false)
 	private String passWord;
-	@Column(name = "role_id", nullable = false, unique = true)
+	@Column(name = "email", nullable = false, unique = true)
 	private String email;
 	
 	@Autowired
