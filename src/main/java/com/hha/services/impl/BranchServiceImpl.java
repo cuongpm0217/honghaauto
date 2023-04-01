@@ -1,13 +1,13 @@
 package com.hha.services.impl;
 
-import java.util.List;
-import java.util.Objects;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.hha.entities.Branch;
 import com.hha.repository.BranchRepository;
 import com.hha.services.BranchService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Objects;
 
 @Service
 public class BranchServiceImpl implements BranchService {

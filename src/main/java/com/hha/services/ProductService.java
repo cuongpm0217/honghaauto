@@ -1,7 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
 import com.hha.entities.Product;
+
+import java.util.List;
 
 public interface ProductService {
 	List<Product> getAllProduct();

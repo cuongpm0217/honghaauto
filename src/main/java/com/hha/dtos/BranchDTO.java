@@ -1,7 +1,5 @@
 package com.hha.dtos;
 
-import com.hha.utils.Converter;
-
 import java.util.Date;
 
 public class BranchDTO extends BaseDTO {

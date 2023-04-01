@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.InvoiceDetail;
+
+import java.util.List;
 
 public interface InvoiceDetailService {
 	InvoiceDetail createInvoiceDetail(InvoiceDetail invd);

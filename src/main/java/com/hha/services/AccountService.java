@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.Account;
+
+import java.util.List;
 
 public interface AccountService {
 	Account create(Account acc);

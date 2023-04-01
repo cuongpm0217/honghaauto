@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.InvoiceType;
+
+import java.util.List;
 
 public interface InvoiceTypeService {
 	InvoiceType create(InvoiceType invT);

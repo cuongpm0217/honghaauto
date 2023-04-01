@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.ModuleDetail;
+
+import java.util.List;
 
 public interface ModuleDetailService {
 	ModuleDetail create(ModuleDetail md, long moduleId);

@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.Customer;
+
+import java.util.List;
 
 public interface CustomerService {
 	Customer createCustomer(Customer c);

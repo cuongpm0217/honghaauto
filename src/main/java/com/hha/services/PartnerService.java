@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.Partner;
+
+import java.util.List;
 
 public interface PartnerService {
 	Partner create(Partner p);

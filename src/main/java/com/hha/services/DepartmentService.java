@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.Department;
+
+import java.util.List;
 
 public interface DepartmentService {
 	Department createDepartment(Department d);

@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.ProductGroup;
+
+import java.util.List;
 
 public interface ProductGroupService {
 	ProductGroup create(ProductGroup pg);

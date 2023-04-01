@@ -2,8 +2,9 @@ package com.hha.repository;
 
 import java.io.Serializable;
 import java.security.Principal;
-import java.util.Collection;
+
+import java.util.Collections;
 
 public interface Authentication extends Principal,Serializable{
-	Collection getAuthorities();
+	Collections getAuthorities();
 }

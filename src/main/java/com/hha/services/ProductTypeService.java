@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.ProductType;
+
+import java.util.List;
 
 public interface ProductTypeService {
 	ProductType create(ProductType pt);

@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.InvoiceAccount;
+
+import java.util.List;
 
 public interface InvoiceAccountService {
 	InvoiceAccount createInvoiceAccount(InvoiceAccount ia);

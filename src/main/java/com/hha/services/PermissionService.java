@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.Permission;
+
+import java.util.List;
 
 public interface PermissionService {
 	Permission create(Permission p);

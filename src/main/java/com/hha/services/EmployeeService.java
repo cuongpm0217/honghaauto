@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.Employee;
+
+import java.util.List;
 
 public interface EmployeeService {
 	Employee createEmployee(Employee emp);

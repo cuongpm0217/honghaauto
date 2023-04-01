@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.Branch;
+
+import java.util.List;
 
 public interface BranchService {
 	Branch createBranch(Branch branch);

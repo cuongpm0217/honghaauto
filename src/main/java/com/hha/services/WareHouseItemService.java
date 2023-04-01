@@ -1,8 +1,8 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.WareHouseItem;
+
+import java.util.List;
 
 public interface WareHouseItemService {
 	WareHouseItem create(WareHouseItem whi);
