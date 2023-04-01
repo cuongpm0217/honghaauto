@@ -59,7 +59,7 @@ public class ModuleController {
 		// set module name
 		setModuleDetail("hidden");
 		ms.hidden(id);
-		return "Delete success";
+		return "Hidden success";
 	}
 
 	// get one

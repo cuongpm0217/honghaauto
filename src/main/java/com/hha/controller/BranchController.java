@@ -63,7 +63,7 @@ public class BranchController {
 		// set module name
 		setModuleDetail("hidden");		
 		bs.hiddenBranch(id);
-		return "Delete success";
+		return "Hidden success";
 	}
 
 	// get one
