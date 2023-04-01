@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class ModuleDetailServiceImpl implements ModuleDetailService {
@@ -22,15 +23,10 @@ public class ModuleDetailServiceImpl implements ModuleDetailService {
 
 	@Override
 	public ModuleDetail create(ModuleDetail md, long moduleId) {
-//		Module m = moduleRepo.findById(moduleId).get();
-//		if (m != null) {
-			md.setModuleId(moduleId);
-			md.setEnable(true);
-			return mdRepo.save(md);
-//		} else {
-//			moduleRepo.findById(moduleId).orElseThrow(() -> new NullPointerException("Module NOT FOUND"));
-//			return null;
-//		}
+		md.setModuleId(moduleId);
+		md.setEnable(true);
+		return mdRepo.save(md);
+
 	}
 
 	@Override
@@ -87,8 +83,12 @@ public class ModuleDetailServiceImpl implements ModuleDetailService {
 		if (Objects.isNull(moduleId) || name == null) {
 			return null;
 		} else {
-			return mdRepo.findByName(moduleId, name).isPresent() ? 
-					mdRepo.findByName(moduleId, name).get() : null;
+			Optional<ModuleDetail> rows = mdRepo.findByName(moduleId, name);
+			if (rows.isPresent()) {
+				return rows.get();
+			} else {
+				return null;
+			}
 		}
 	}
 

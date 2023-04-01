@@ -37,11 +37,14 @@ public class ColorServiceImpl implements ColorService{
 	}
 
 	@Override
-	public void hiddenColor(long id) {
+	public boolean hiddenColor(long id) {
 		Color color = repo.findById(id).get();
 		if(Objects.nonNull(color)||Objects.nonNull(id)) {
 			color.setEnable(false);
 			repo.save(color);
+			return true;
+		}else {
+			return false;
 		}		
 	}
 

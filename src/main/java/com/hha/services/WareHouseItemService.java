@@ -11,7 +11,7 @@ public interface WareHouseItemService {
 
 	void delete(long id);
 
-	void hidden(long id);
+	boolean hidden(long id);
 
 	WareHouseItem getById(long id);
 

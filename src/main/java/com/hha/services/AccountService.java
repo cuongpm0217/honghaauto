@@ -11,7 +11,7 @@ public interface AccountService {
 
 	void delete(long id);
 
-	void hidden(long id);
+	boolean hidden(long id);
 
 	Account getById(long id);
 

@@ -10,6 +10,7 @@ public interface PermissionService {
 	Permission update(long id, Permission p);
 
 	void delete(long id);
+	boolean hidden(long id);
 
 	Permission getById(long id);
 

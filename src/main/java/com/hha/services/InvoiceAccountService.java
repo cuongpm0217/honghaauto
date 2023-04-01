@@ -11,7 +11,7 @@ public interface InvoiceAccountService {
 
 	void deleteInvoiceAccount(InvoiceAccount ia);
 
-	void hidden(long id);
+	boolean hidden(long id);
 
 	InvoiceAccount getInvoiceAccountById(long id);
 

@@ -41,11 +41,14 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public void hidden(long id) {
+	public boolean hidden(long id) {
 		Account accSelect = repo.findById(id).get();
-		if (Objects.nonNull(accSelect)) {
+		if (accSelect!=null) {
 			accSelect.setEnable(false);
 			repo.save(accSelect);
+			return true;
+		}else {
+			return false;
 		}
 	}
 

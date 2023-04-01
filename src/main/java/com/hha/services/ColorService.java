@@ -8,7 +8,7 @@ public interface ColorService {
 	Color createColor(Color c);
 	Color updateColor(long id,Color c);
 	void deleteColor(long id);
-	void hiddenColor(long id);
+	boolean hiddenColor(long id);
 	Color getColorById(long id);
 	List<Color> getAllColor();
 }

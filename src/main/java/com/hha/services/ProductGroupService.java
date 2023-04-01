@@ -11,7 +11,7 @@ public interface ProductGroupService {
 
 	void delete(long id);
 
-	void hidden(long id);
+	boolean hidden(long id);
 
 	ProductGroup getById(long id);
 

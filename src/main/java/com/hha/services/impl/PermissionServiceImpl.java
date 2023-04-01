@@ -10,9 +10,10 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class PermissionServiceImpl implements PermissionService{
+public class PermissionServiceImpl implements PermissionService {
 	@Autowired
 	private PermissionRepository repo;
+
 	@Override
 	public Permission create(Permission p) {
 		return repo.save(p);
@@ -21,16 +22,15 @@ public class PermissionServiceImpl implements PermissionService{
 	@Override
 	public Permission update(long id, Permission p) {
 		Permission pSelect = repo.findById(id).get();
-		if(Objects.nonNull(id)||p!=null||pSelect!=null) 
-		{
-			pSelect.setAction(p.getAction());			
+		if (Objects.nonNull(id) || p != null || pSelect != null) {
+			pSelect.setAction(p.getAction());
 		}
-		return pSelect;
+		return repo.save(pSelect);
 	}
 
 	@Override
 	public void delete(long id) {
-		repo.deleteById(id);		
+		repo.deleteById(id);
 	}
 
 	@Override
@@ -41,6 +41,18 @@ public class PermissionServiceImpl implements PermissionService{
 	@Override
 	public List<Permission> getAll() {
 		return repo.findAll();
+	}
+
+	@Override
+	public boolean hidden(long id) {
+		Permission pSelect = repo.findById(id).get();
+		if (Objects.nonNull(id) || pSelect != null) {
+			pSelect.setEnable(false);
+			repo.save(pSelect);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }

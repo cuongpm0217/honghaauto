@@ -53,12 +53,16 @@ public class BranchServiceImpl implements BranchService {
 	}
 
 	@Override
-	public void hiddenBranch(long id) {
+	public boolean hiddenBranch(long id) {
 		Branch brc = repo.findById(id).get();
-		if(Objects.nonNull(brc)) {
+		if(brc!=null) {
 			brc.setEnable(false);
+			repo.save(brc);
+			return true;
+		}else {
+			return false;
 		}
-		repo.save(brc);
+		
 	}
 
 }

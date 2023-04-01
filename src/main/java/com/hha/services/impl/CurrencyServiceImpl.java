@@ -38,11 +38,14 @@ public class CurrencyServiceImpl implements CurrencyService {
 	}
 
 	@Override
-	public void hidden(long id) {
+	public boolean hidden(long id) {
 		Currency curSelect = repo.findById(id).get();
 		if (Objects.nonNull(id) || Objects.nonNull(curSelect)) {
 			curSelect.setEnable(false);
 			repo.save(curSelect);
+			return true;
+		}else {
+			return false;
 		}
 	}
 

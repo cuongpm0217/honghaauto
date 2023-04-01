@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class ModuleServiceImpl implements ModuleService {
@@ -18,7 +19,7 @@ public class ModuleServiceImpl implements ModuleService {
 	@Override
 	public Module create(Module module) {
 		module.setEnable(true);
-		
+
 		return repo.save(module);
 	}
 
@@ -64,9 +65,13 @@ public class ModuleServiceImpl implements ModuleService {
 	}
 
 	@Override
-	public Module getByName(String name) {		
-		return repo.findByName(name).isPresent()? repo.findByName(name).get():null;
+	public Module getByName(String name) {
+		Optional<Module> rows = repo.findByName(name);
+		if (rows.isPresent()) {
+			return rows.get();
+		} else {
+			return null;
+		}
 	}
-
 
 }

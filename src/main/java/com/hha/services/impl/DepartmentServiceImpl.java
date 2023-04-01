@@ -40,11 +40,14 @@ public class DepartmentServiceImpl implements DepartmentService {
 	}
 
 	@Override
-	public void hidden(long id) {
+	public boolean hidden(long id) {
 		Department dep = repo.findById(id).get();
 		if (Objects.nonNull(id) || Objects.nonNull(dep)) {
 			dep.setEnable(false);
 			repo.save(dep);
+			return true;
+		} else {
+			return false;
 		}
 	}
 

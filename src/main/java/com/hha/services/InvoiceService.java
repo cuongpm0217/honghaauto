@@ -11,7 +11,7 @@ public interface InvoiceService {
 
 	void delete(long id);
 
-	void hidden(long id);
+	boolean hidden(long id);
 
 	Invoice getById(long id);
 

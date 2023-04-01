@@ -11,7 +11,7 @@ public interface ProductTypeService {
 
 	void delete(long id);
 
-	void hidden(long id);
+	boolean hidden(long id);
 
 	ProductType getById(long id);
 

@@ -43,11 +43,14 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void hidden(long id) {
+	public boolean hidden(long id) {
 		Customer cusSelect = repo.findById(id).get();
 		if(Objects.nonNull(id)||Objects.nonNull(cusSelect)) {
 			cusSelect.setEnable(false);
 			repo.save(cusSelect);
+			return true;
+		} else {
+			return false;
 		}
 	}
 

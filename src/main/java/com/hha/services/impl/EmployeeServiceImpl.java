@@ -51,11 +51,14 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public void hidden(long id) {
+	public boolean hidden(long id) {
 		Employee emp = repo.findById(id).get();
 		if(Objects.nonNull(id)||Objects.nonNull(emp)) {
 			emp.setEnable(false);
 			repo.save(emp);
+			return true;
+		} else {
+			return false;
 		}
 	}
 

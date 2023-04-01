@@ -11,7 +11,7 @@ public interface EmployeeService {
 
 	void deleteEmployee(long id);
 
-	void hidden(long id);
+	boolean hidden(long id);
 
 	Employee getEmployeeById(long id);
 
