@@ -15,28 +15,16 @@ public class Product extends BaseEntity {
 	@Column(name = "name")
 	private String name;
 	@Column(name = "gen_id") // product code
-	private String genId;
-	@Column(name = "type_id")
-	private long typeId;
-	@Column(name = "color_id")
-	private long colorId;
-	@Column(name = "group_id")
-	private long groupId;
+	private String genId;		
 	@Column(name = "cost_in")
 	private long costIn;
 	@Column(name = "cost_out")
-	private long costOut;
-	@Column(name = "images_id")
-	private long imagesId;
-	@Column(name="videos_id")
-	private long videosId;
+	private long costOut;	
 	@Column(name = "guarantee")
 	private int guarantee;// by month
 	@Column(name = "expiry")
 	private Date expiry;
-	@Column(name = "partner_id")
-	private long partnerId;
-
+	
 	public long getId() {
 		return id;
 	}
@@ -60,30 +48,7 @@ public class Product extends BaseEntity {
 	public void setGenId(String genId) {
 		this.genId = genId;
 	}
-
-	public long getTypeId() {
-		return typeId;
-	}
-
-	public void setTypeId(long typeId) {
-		this.typeId = typeId;
-	}
-
-	public long getColorId() {
-		return colorId;
-	}
-
-	public void setColorId(long colorId) {
-		this.colorId = colorId;
-	}
-
-	public long getGroupId() {
-		return groupId;
-	}
-
-	public void setGroupId(long groupId) {
-		this.groupId = groupId;
-	}
+	
 
 	public long getCostIn() {
 		return costIn;
@@ -115,33 +80,7 @@ public class Product extends BaseEntity {
 
 	public void setExpiry(Date expiry) {
 		this.expiry = expiry;
-	}
-
-	public long getPartnerId() {
-		return partnerId;
-	}
-
-	public void setPartnerId(long partnerId) {
-		this.partnerId = partnerId;
-	}
-
-	public Product(long id, String name, String genId, long typeId, long colorId, long groupId, long costIn,
-			long costOut, long imagesId, int guarantee, Date expiry, long partnerId) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.genId = genId;
-		this.typeId = typeId;
-		this.colorId = colorId;
-		this.groupId = groupId;
-		this.costIn = costIn;
-		this.costOut = costOut;
-		this.imagesId = imagesId;
-		this.guarantee = guarantee;
-		this.expiry = expiry;
-		this.partnerId = partnerId;
-	}
-
+	}	
 	public Product() {
 	}
 }

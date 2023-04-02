@@ -15,7 +15,10 @@ public class ProductGroup extends BaseEntity {
 	private String name;
 	@Column(name = "gen_id") // code
 	private String genId;
-
+	@Column(name="product_id",nullable=false)
+	private long productId;
+	@Column(name="group_id",nullable=false)
+	private long groupId;
 	public long getId() {
 		return id;
 	}
@@ -39,14 +42,23 @@ public class ProductGroup extends BaseEntity {
 	public void setGenId(String genId) {
 		this.genId = genId;
 	}
+	public long getProductId() {
+		return productId;
+	}
 
-	public ProductGroup(long id, String name, String genId) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.genId = genId;
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+
+	public long getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(long groupId) {
+		this.groupId = groupId;
 	}
 
 	public ProductGroup() {
 	}
+	
 }

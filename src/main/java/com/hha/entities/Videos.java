@@ -51,15 +51,13 @@ public class Videos extends BaseEntity {
 		this.desciption = desciption;
 		this.url = url;
 	}
-	public Videos(long id, String tittle, String desciption, String url) {
-		
+	public Videos(long id, String tittle, String desciption, String url) {		
 		this.id = id;
 		this.tittle = tittle;
 		this.desciption = desciption;
 		this.url = url;
 	}
-	public Videos() {
-		
+	public Videos() {		
 	}
 	
 }

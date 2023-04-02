@@ -5,30 +5,14 @@ import com.hha.utils.Converter;
 import java.util.Date;
 
 public class ProductDTO extends BaseDTO {
-
-	private long Id;
-
+	private long id;
 	private String name;
 	// product code
 	private String genId;
-
-	private long typeId;
-
-	private long colorId;
-
-	private long groupId;
-
 	private long costIn;
-
 	private long costOut;
-
-	private long imageGroupId;
-
 	private int guarantee;// by month
-
 	private Date expiry;
-
-	private long partnerId;
 	private String txtExpiry;
 	private Converter convert;
 
@@ -42,11 +26,11 @@ public class ProductDTO extends BaseDTO {
 	}
 
 	public long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(long id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getName() {
@@ -65,30 +49,6 @@ public class ProductDTO extends BaseDTO {
 		this.genId = genId;
 	}
 
-	public long getTypeId() {
-		return typeId;
-	}
-
-	public void setTypeId(long typeId) {
-		this.typeId = typeId;
-	}
-
-	public long getColorId() {
-		return colorId;
-	}
-
-	public void setColorId(long colorId) {
-		this.colorId = colorId;
-	}
-
-	public long getGroupId() {
-		return groupId;
-	}
-
-	public void setGroupId(long groupId) {
-		this.groupId = groupId;
-	}
-
 	public long getCostIn() {
 		return costIn;
 	}
@@ -105,14 +65,6 @@ public class ProductDTO extends BaseDTO {
 		this.costOut = costOut;
 	}
 
-	public long getImageGroupId() {
-		return imageGroupId;
-	}
-
-	public void setImageGroupId(long imageGroupId) {
-		this.imageGroupId = imageGroupId;
-	}
-
 	public int getGuarantee() {
 		return guarantee;
 	}
@@ -127,32 +79,19 @@ public class ProductDTO extends BaseDTO {
 
 	public void setExpiry(Date expiry) {
 		this.expiry = expiry;
-	}
-
-	public long getPartnerId() {
-		return partnerId;
-	}
-
-	public void setPartnerId(long partnerId) {
-		this.partnerId = partnerId;
-	}
+	}	
 
 	public ProductDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, String name, String genId, long typeId, long colorId, long groupId, long costIn,
-			long costOut, long imageGroupId, int guarantee, Date expiry, long partnerId) {
+			boolean isEnable, long id, String name, String genId, long costIn,	long costOut,	int guarantee, Date expiry) {
 		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		Id = id;
+		this.id = id;
 		this.name = name;
-		this.genId = genId;
-		this.typeId = typeId;
-		this.colorId = colorId;
-		this.groupId = groupId;
+		this.genId = genId;		
 		this.costIn = costIn;
-		this.costOut = costOut;
-		this.imageGroupId = imageGroupId;
+		this.costOut = costOut;		
 		this.guarantee = guarantee;
 		this.expiry = expiry;
-		this.partnerId = partnerId;
+		convert = new Converter();
 	}
 
 	public ProductDTO() {

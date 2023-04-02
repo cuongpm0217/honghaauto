@@ -12,9 +12,7 @@ import java.util.Date;
 public class Invoice extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column(nullable = false, name = "type_id")
-	private long typeId;
+	private long id;	
 	@Column(nullable = false, name = "cus_id")
 	private long cusId;
 	@Column(nullable = false, name = "emp_id")
@@ -46,15 +44,7 @@ public class Invoice extends BaseEntity {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public long getTypeId() {
-		return typeId;
-	}
-
-	public void setTypeId(long typeId) {
-		this.typeId = typeId;
-	}
+	}	
 
 	public long getCusId() {
 		return cusId;
@@ -155,12 +145,11 @@ public class Invoice extends BaseEntity {
 	public Invoice() {
 	}
 
-	public Invoice(long id, long typeId, long cusId, long empId, String tittle, long total, Date startedDate,
+	public Invoice(long id, long cusId, long empId, String tittle, long total, Date startedDate,
 			Date endDate, String logoUrl, String telBranch, String addBranch, String bankAcc1, String bankAcc2,
 			long currencyId) {
 		super();
-		this.id = id;
-		this.typeId = typeId;
+		this.id = id;		
 		this.cusId = cusId;
 		this.empId = empId;
 		this.tittle = tittle;

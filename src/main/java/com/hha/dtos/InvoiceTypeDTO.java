@@ -5,8 +5,8 @@ import java.util.Date;
 public class InvoiceTypeDTO extends BaseDTO {
 
 	private long id;
-
-	private String name;
+	private long invoiceId;
+	private long typeId;
 
 	public long getId() {
 		return id;
@@ -16,21 +16,38 @@ public class InvoiceTypeDTO extends BaseDTO {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public long getInvoiceId() {
+		return invoiceId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setInvoiceId(long invoiceId) {
+		this.invoiceId = invoiceId;
 	}
 
-	public InvoiceTypeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, String name) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.name = name;
+	public long getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(long typeId) {
+		this.typeId = typeId;
 	}
 
 	public InvoiceTypeDTO() {
 	}
+
+	public InvoiceTypeDTO(long id, long invoiceId, long typeId) {
+
+		this.id = id;
+		this.invoiceId = invoiceId;
+		this.typeId = typeId;
+	}
+
+	public InvoiceTypeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
+			boolean isEnable, long id, long invoiceId, long typeId) {
+		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
+		this.id = id;
+		this.invoiceId = invoiceId;
+		this.typeId = typeId;
+	}
+
 }
