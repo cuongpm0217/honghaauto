@@ -17,5 +17,9 @@ public interface EmployeeService {
 
 	List<Employee> getAllEmployee();
 
-	List<Employee> getEmployeeByText(String txtSearch);
+	List<Employee> getAllByBranchId(long branchId);
+
+	List<Employee> getAllByDepId(long branchId, long depId);
+
+	List<Employee> getEmployeeByText(String txtSearch, long branchId, long depId);
 }

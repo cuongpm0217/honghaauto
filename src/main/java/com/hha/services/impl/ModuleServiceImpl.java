@@ -27,7 +27,6 @@ public class ModuleServiceImpl implements ModuleService {
 	public Module update(long id, Module module) {
 		Module mSelect = repo.findById(id).get();
 		if (Objects.nonNull(id) || Objects.nonNull(module) || Objects.nonNull(mSelect)) {
-			mSelect.setBranchId(module.getBranchId());
 			mSelect.setEnable(module.isEnable());
 			mSelect.setModifyDate(new Date());
 			mSelect.setName(module.getName());

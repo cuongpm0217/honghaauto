@@ -27,7 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 			empSelect.setAdd1(emp.getAdd1());
 			empSelect.setAdd2(emp.getAdd2());
 			empSelect.setBankAcc1(emp.getBankAcc1());
-			empSelect.setBankAcc2(emp.getBankAcc2());
+			empSelect.setBankAcc2(emp.getBankAcc2());			
 			empSelect.setBranchId(emp.getBranchId());
 			empSelect.setDepId(emp.getDepId());
 			empSelect.setDOB(emp.getDOB());
@@ -73,9 +73,19 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public List<Employee> getEmployeeByText(String txtSearch) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Employee> getEmployeeByText(String txtSearch, long branchId, long depId) {
+		List<Employee> listEmp = repo.getEmployeeByText(txtSearch, branchId, depId);
+		return listEmp;		
+	}
+
+	@Override
+	public List<Employee> getAllByBranchId(long branchId) {
+		return repo.getAllByBranchId(branchId);
+	}
+
+	@Override
+	public List<Employee> getAllByDepId(long branchId, long depId) {
+		return repo.getAllByDepId(branchId, depId);
 	}
 
 }

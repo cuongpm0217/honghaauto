@@ -16,4 +16,8 @@ public interface ProductGroupService {
 	ProductGroup getById(long id);
 
 	List<ProductGroup> getAll();
+
+	List<ProductGroup> getAllByProductId(long id);
+
+	List<ProductGroup> getAllByGroupId(long id);
 }

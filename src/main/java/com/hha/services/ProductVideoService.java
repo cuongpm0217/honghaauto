@@ -16,4 +16,8 @@ public interface ProductVideoService {
 	ProductVideo getById(long id);
 
 	List<ProductVideo> getAll();
+
+	List<ProductVideo> getAllByProductId(long id);
+
+	List<ProductVideo> getAllByVideoId(long id);
 }

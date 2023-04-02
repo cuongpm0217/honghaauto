@@ -1,7 +1,6 @@
 package com.hha.services;
 
 import java.util.List;
-
 import com.hha.entities.ProductColor;
 
 public interface ProductColorService {
@@ -16,4 +15,8 @@ public interface ProductColorService {
 	ProductColor getById(long id);
 
 	List<ProductColor> getAll();
+
+	List<ProductColor> getAllByProductId(long id);
+
+	List<ProductColor> getAllByColorId(long id);
 }

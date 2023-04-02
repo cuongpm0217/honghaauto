@@ -34,8 +34,7 @@ public class ModuleDetailServiceImpl implements ModuleDetailService {
 		Module m = moduleRepo.findById(moduleId).get();
 		if (m != null || Objects.nonNull(moduleId)) {
 			ModuleDetail mdSelect = mdRepo.findById(id).get();
-			if (mdSelect != null || Objects.nonNull(id)) {
-				mdSelect.setBranchId(md.getBranchId());
+			if (mdSelect != null || Objects.nonNull(id)) {				
 				mdSelect.setEnable(md.isEnable());
 				mdSelect.setModifyDate(new Date());
 				mdSelect.setModuleId(md.getModuleId());
