@@ -6,7 +6,6 @@ import com.hha.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,12 +24,10 @@ public class AccountServiceImpl implements AccountService {
 	public Account update(long id, Account acc) {
 		Account accSelect = repo.findById(id).get();
 		if (Objects.nonNull(accSelect)) {
-			accSelect.setBranchId(acc.getBranchId());
 			accSelect.setCode(acc.getCode());
-			accSelect.setLever(acc.getLever());
-			accSelect.setModifyDate(new Date());
-			accSelect.setName(acc.getName());
-			accSelect.setUserModify(acc.getUserModify());
+			accSelect.setEnable(acc.isEnable());
+			accSelect.setLever(acc.getLever());			
+			accSelect.setName(acc.getName());			
 		}
 		return repo.save(accSelect);
 	}

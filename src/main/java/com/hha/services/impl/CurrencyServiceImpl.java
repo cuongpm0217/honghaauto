@@ -26,8 +26,8 @@ public class CurrencyServiceImpl implements CurrencyService {
 		if (Objects.nonNull(id) || Objects.nonNull(curSelect) || Objects.nonNull(cur)) {
 			curSelect.setCode(cur.getCode());
 			curSelect.setEnable(cur.isEnable());
-			curSelect.setName(cur.getCode());
-			curSelect.setRate(cur.getRate());
+			curSelect.setName(cur.getName());
+			curSelect.setRate(cur.getRate());			
 		}
 		return repo.save(curSelect);
 	}

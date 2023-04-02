@@ -24,14 +24,9 @@ public class BranchServiceImpl implements BranchService {
 	public Branch updateBranch(long id, Branch branch) {
 		Branch brc = repo.findById(id).get();
 		if (Objects.nonNull(brc)||Objects.nonNull(branch)) {
-			brc.setCreateDate(branch.getCreateDate());
-			brc.setGenId(branch.getGenId());
-			brc.setId(branch.getId());
-			brc.setLever(branch.getLever());
-			brc.setModifyDate(branch.getModifyDate());
-			brc.setName(branch.getName());
-			brc.setUserCreate(branch.getUserCreate());
-			brc.setUserModify(branch.getUserModify());
+			brc.setGenId(branch.getGenId());		
+			brc.setLever(branch.getLever());			
+			brc.setName(branch.getName());			
 		}
 		return repo.save(brc);
 	}

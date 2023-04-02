@@ -5,8 +5,6 @@ import com.hha.repository.DepartmentRepository;
 import com.hha.services.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,11 +23,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 	public Department updateDepartment(long id, Department d) {
 		Department dep = repo.findById(id).get();
 		if (Objects.nonNull(id) || Objects.nonNull(d) || Objects.nonNull(dep)) {
-			dep.setBranchId(d.getBranchId());
+			dep.setDepGenId(d.getDepGenId());
 			dep.setDepName(d.getDepName());
-			dep.setEnable(d.isEnable());
-			dep.setModifyDate(new Date());
-			dep.setUserModify(d.getUserModify());
+			dep.setEnable(d.isEnable());			
 		}
 		return repo.save(dep);
 	}

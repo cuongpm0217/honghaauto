@@ -5,8 +5,6 @@ import com.hha.repository.CustomerRepository;
 import com.hha.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,14 +23,14 @@ public class CustomerServiceImpl implements CustomerService {
 	public Customer updateCustomer(long id, Customer c) {
 		Customer cusSelect = repo.findById(id).get();
 		if(Objects.nonNull(id)||Objects.nonNull(c)||Objects.nonNull(cusSelect)) {
-			cusSelect.setBranchId(c.getBranchId());
 			cusSelect.setDOB(c.getDOB());
-			cusSelect.setEnable(c.isEnable());
-			cusSelect.setModifyDate(new Date());
+			cusSelect.setGenId(c.getGenId());
+			cusSelect.setEnable(c.isEnable());			
 			cusSelect.setName(c.getName());
 			cusSelect.setTel1(c.getTel1());
 			cusSelect.setTel1(c.getTel2());
-			cusSelect.setUserModify(c.getUserModify());
+			cusSelect.setAdd1(c.getAdd1());
+			cusSelect.setAdd2(c.getAdd2());			
 		}
 		return repo.save(cusSelect);
 	}
