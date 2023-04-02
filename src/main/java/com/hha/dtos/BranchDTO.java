@@ -11,6 +11,8 @@ public class BranchDTO extends BaseDTO {
 
 	private String name;
 	
+	private Date establishDate;
+	
 	public long getId() {
 		return id;
 	}
@@ -43,16 +45,26 @@ public class BranchDTO extends BaseDTO {
 		this.name = name;
 	}
 
-	public BranchDTO( long id,String genId, int lever, Date modifyDate, String name) {
-		this.genId = genId;
-		this.id = id;
-		this.lever = lever;
-		this.name = name;
+	
+	public Date getEstablishDate() {
+		return establishDate;
+	}
 
+	public void setEstablishDate(Date establishDate) {
+		this.establishDate = establishDate;
 	}
 
 	public BranchDTO() {
 		
 	}
 
+	public BranchDTO(long id, String genId, int lever, String name, Date establishDate) {
+		super();
+		this.id = id;
+		this.genId = genId;
+		this.lever = lever;
+		this.name = name;
+		this.establishDate = establishDate;
+	}
+	
 }

@@ -84,10 +84,9 @@ public class WareHouseDTO extends BaseDTO {
 		convert = new Converter();
 	}
 
-	public WareHouseDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, long productId, long itemTypeId, Date dateInput, Date dateOutput,
-			String txtDateInput, String txtDateOutput, long invoiceDetailId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
+	public WareHouseDTO(long id, long productId, long itemTypeId, Date dateInput, Date dateOutput, String txtDateInput,
+			String txtDateOutput, long invoiceDetailId) {
+		super();
 		this.id = id;
 		this.productId = productId;
 		this.itemTypeId = itemTypeId;
@@ -96,6 +95,9 @@ public class WareHouseDTO extends BaseDTO {
 		this.txtDateInput = txtDateInput;
 		this.txtDateOutput = txtDateOutput;
 		this.invoiceDetailId = invoiceDetailId;
+		convert = new Converter();
 	}
+	
+	
 	
 }

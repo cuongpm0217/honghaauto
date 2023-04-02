@@ -20,8 +20,15 @@ public class Customer extends BaseEntity{
 	private String tel1;
 	@Column(name="tel2")
 	private String tel2;
+	@Column(name="add1")
+	private String add1;
+	@Column(name="add2")
+	private String add2;
 	@Column(name="dob")
 	private Date DOB;
+	@Column(name="branch_id",unique=true)
+	private long branchId;
+	
 	public long getId() {
 		return id;
 	}
@@ -52,20 +59,47 @@ public class Customer extends BaseEntity{
 	public void setTel2(String tel2) {
 		this.tel2 = tel2;
 	}
+	
+	public String getAdd1() {
+		return add1;
+	}
+	public void setAdd1(String add1) {
+		this.add1 = add1;
+	}
+	public String getAdd2() {
+		return add2;
+	}
+	public void setAdd2(String add2) {
+		this.add2 = add2;
+	}
 	public Date getDOB() {
 		return DOB;
 	}
 	public void setDOB(Date dOB) {
 		DOB = dOB;
 	}
+	
+	public long getBranchId() {
+		return branchId;
+	}
+	public void setBranchId(long branchId) {
+		this.branchId = branchId;
+	}
 	public Customer() {}
-	public Customer(long id, String name, String genId, String tel1, String tel2, Date dOB) {
+	public Customer(long id, String name, String genId, String tel1, String tel2, String add1, String add2, Date dOB,
+			long branchId) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.genId = genId;
 		this.tel1 = tel1;
 		this.tel2 = tel2;
+		this.add1 = add1;
+		this.add2 = add2;
 		DOB = dOB;
+		this.branchId = branchId;
 	}
+	
+	
 	
 }

@@ -66,16 +66,6 @@ public class ProductType extends BaseEntity {
 	public ProductType() {
 	}
 
-	public ProductType(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, String name, String genId, long productId, long typeId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.name = name;
-		this.genId = genId;
-		this.productId = productId;
-		this.typeId = typeId;
-	}
-
 	public ProductType(long id, String name, String genId, long productId, long typeId) {
 		this.id = id;
 		this.name = name;
@@ -83,5 +73,5 @@ public class ProductType extends BaseEntity {
 		this.productId = productId;
 		this.typeId = typeId;
 	}
-	
+
 }

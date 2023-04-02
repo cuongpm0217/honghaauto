@@ -1,7 +1,5 @@
 package com.hha.entities;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +15,7 @@ public class Group extends BaseEntity{
 	private String genId;
 	@Column
 	private String name;
+	
 	public long getId() {
 		return id;
 	}
@@ -37,14 +36,7 @@ public class Group extends BaseEntity{
 	}
 	public Group() {
 		
-	}
-	public Group(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, boolean isEnable,
-			long id, String genId, String name) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.genId = genId;
-		this.name = name;
-	}
+	}	
 	public Group(long id, String genId, String name) {
 		super();
 		this.id = id;

@@ -43,14 +43,7 @@ public class Videos extends BaseEntity {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public Videos(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, boolean isEnable,
-			long id, String tittle, String desciption, String url) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.tittle = tittle;
-		this.desciption = desciption;
-		this.url = url;
-	}
+	
 	public Videos(long id, String tittle, String desciption, String url) {		
 		this.id = id;
 		this.tittle = tittle;

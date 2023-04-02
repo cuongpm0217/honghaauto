@@ -1,7 +1,5 @@
 package com.hha.dtos;
 
-import java.util.Date;
-
 public class ProductTypeDTO extends BaseDTO {
 
 	private long id;
@@ -37,9 +35,7 @@ public class ProductTypeDTO extends BaseDTO {
 	public ProductTypeDTO() {
 	}
 
-	public ProductTypeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, String name, String genId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
+	public ProductTypeDTO(long id, String name, String genId) {
 		this.id = id;
 		this.name = name;
 		this.genId = genId;

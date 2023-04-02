@@ -26,9 +26,7 @@ public abstract class BaseEntity {
 	@CreatedBy
 	protected long userCreate;
 	@LastModifiedBy
-	protected long userModify;
-	@Column(name = "branch_id")
-	protected long branchId;
+	protected long userModify;	
 	@Column(name="is_enable")
 	protected boolean isEnable;
 	public Date getCreateDate() {
@@ -54,26 +52,19 @@ public abstract class BaseEntity {
 	}
 	public void setUserModify(long userModify) {
 		this.userModify = userModify;
-	}
-	public long getBranchId() {
-		return branchId;
-	}
-	public void setBranchId(long branchId) {
-		this.branchId = branchId;
-	}
+	}	
 	public boolean isEnable() {
 		return isEnable;
 	}
 	public void setEnable(boolean isEnable) {
 		this.isEnable = isEnable;
 	}
-	public BaseEntity(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
+	public BaseEntity(Date createDate, Date modifyDate, long userCreate, long userModify,
 			boolean isEnable) {		
 		this.createDate = createDate;
 		this.modifyDate = modifyDate;
 		this.userCreate = userCreate;
-		this.userModify = userModify;
-		this.branchId = branchId;
+		this.userModify = userModify;		
 		this.isEnable = isEnable;
 	}
 	public BaseEntity() {

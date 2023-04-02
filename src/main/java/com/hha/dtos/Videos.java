@@ -31,16 +31,16 @@ public class Videos extends BaseDTO{
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public Videos(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, boolean isEnable,
-			long id, String tittle, String description, String url) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
+	
+	public Videos() {
+		
+	}
+	public Videos(long id, String tittle, String description, String url) {
+		super();
 		this.id = id;
 		this.tittle = tittle;
 		this.description = description;
 		this.url = url;
-	}
-	public Videos() {
-		
 	}
 	
 }

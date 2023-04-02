@@ -1,5 +1,7 @@
 package com.hha.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,8 +17,9 @@ public class Branch extends BaseEntity{
 	@Column(name = "gen_Id")
 	private String genId;
 	@Column(name = "lever")
-	private int lever;//	0-9 des
-	
+	private int lever;//	1-3 des
+	@Column(name="establish_date")
+	private Date establishDate;
 	public long getId() {
 		return id;
 	}
@@ -42,15 +45,23 @@ public class Branch extends BaseEntity{
 		this.lever = lever;
 	}
 	
+	public Date getEstablishDate() {
+		return establishDate;
+	}
+	public void setEstablishDate(Date establishDate) {
+		this.establishDate = establishDate;
+	}
 	public Branch() {
 		
 	}
-	public Branch(long id, String name, String genId, int lever) {
+	public Branch(long id, String name, String genId, int lever, Date establishDate) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.genId = genId;
 		this.lever = lever;
-		
+		this.establishDate = establishDate;
 	}
+	
 	
 }

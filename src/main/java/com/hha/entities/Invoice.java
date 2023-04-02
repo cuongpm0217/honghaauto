@@ -12,7 +12,7 @@ import java.util.Date;
 public class Invoice extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;	
+	private long id;
 	@Column(nullable = false, name = "cus_id")
 	private long cusId;
 	@Column(nullable = false, name = "emp_id")
@@ -37,6 +37,8 @@ public class Invoice extends BaseEntity {
 	private String bankAcc2;
 	@Column(name = "currency_id")
 	private long currencyId;
+	@Column(name = "branch_id", unique = true)
+	private long branchId;
 
 	public long getId() {
 		return id;
@@ -44,7 +46,7 @@ public class Invoice extends BaseEntity {
 
 	public void setId(long id) {
 		this.id = id;
-	}	
+	}
 
 	public long getCusId() {
 		return cusId;
@@ -142,14 +144,22 @@ public class Invoice extends BaseEntity {
 		this.currencyId = currencyId;
 	}
 
+	public long getBranchId() {
+		return branchId;
+	}
+
+	public void setBranchId(long branchId) {
+		this.branchId = branchId;
+	}
+
 	public Invoice() {
 	}
 
-	public Invoice(long id, long cusId, long empId, String tittle, long total, Date startedDate,
-			Date endDate, String logoUrl, String telBranch, String addBranch, String bankAcc1, String bankAcc2,
-			long currencyId) {
+	public Invoice(long id, long cusId, long empId, String tittle, long total, Date startedDate, Date endDate,
+			String logoUrl, String telBranch, String addBranch, String bankAcc1, String bankAcc2, long currencyId,
+			long branchId) {
 		super();
-		this.id = id;		
+		this.id = id;
 		this.cusId = cusId;
 		this.empId = empId;
 		this.tittle = tittle;
@@ -162,6 +172,7 @@ public class Invoice extends BaseEntity {
 		this.bankAcc1 = bankAcc1;
 		this.bankAcc2 = bankAcc2;
 		this.currencyId = currencyId;
+		this.branchId = branchId;
 	}
 
 }

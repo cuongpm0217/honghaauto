@@ -33,14 +33,6 @@ public class ModuleDetailDTO extends BaseDTO {
 		this.moduleId = moduleId;
 	}
 
-	public ModuleDetailDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, String name, long moduleId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.name = name;
-		this.moduleId = moduleId;
-	}
-
 	public ModuleDetailDTO(long id, String name, long moduleId) {
 		this.id = id;
 		this.name = name;

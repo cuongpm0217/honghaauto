@@ -7,16 +7,7 @@ public class CurrencyDTO extends BaseDTO{
 
 	private String name;// Vietnam Dong
 	private double rate;
-	private boolean isEnable;
-
-	public boolean isEnable() {
-		return isEnable;
-	}
-
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
-
+	
 	public long getId() {
 		return id;
 	}
@@ -41,15 +32,6 @@ public class CurrencyDTO extends BaseDTO{
 		this.name = name;
 	}
 	
-	public CurrencyDTO(long id, String code, String name, double rate, boolean isEnable) {
-		super();
-		this.id = id;
-		this.code = code;
-		this.name = name;
-		this.rate = rate;
-		this.isEnable = isEnable;
-	}
-
 	public double getRate() {
 		return rate;
 	}
@@ -60,4 +42,13 @@ public class CurrencyDTO extends BaseDTO{
 
 	public CurrencyDTO() {
 	}
+
+	public CurrencyDTO(long id, String code, String name, double rate) {
+		
+		this.id = id;
+		this.code = code;
+		this.name = name;
+		this.rate = rate;
+	}
+	
 }

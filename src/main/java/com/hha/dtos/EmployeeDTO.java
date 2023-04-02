@@ -21,6 +21,7 @@ public class EmployeeDTO extends BaseDTO {
 	private int lever;// 0-9 des
 	private long userId;
 	private long depId;
+	private long branchId;
 	private String txtDOB;
 	private Converter convert;
 	
@@ -161,10 +162,13 @@ public class EmployeeDTO extends BaseDTO {
 		this.depId = depId;
 	}
 
-	public EmployeeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,boolean isEnable, long id,
-			String name, String genId, String nationId, String tel1, String tel2, Date dOB, String add1, String add2,
-			long salary, String bankAcc1, String bankAcc2, String position, int lever, long userId, long depId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId,isEnable);
+	public EmployeeDTO() {
+		convert = new Converter();
+	}
+
+	public EmployeeDTO(long id, String name, String genId, String nationId, String tel1, String tel2, Date dOB,
+			String add1, String add2, long salary, String bankAcc1, String bankAcc2, String position, int lever,
+			long userId, long depId, long branchId, String txtDOB) {		
 		this.id = id;
 		this.name = name;
 		this.genId = genId;
@@ -181,9 +185,9 @@ public class EmployeeDTO extends BaseDTO {
 		this.lever = lever;
 		this.userId = userId;
 		this.depId = depId;
-	}
-
-	public EmployeeDTO() {
+		this.branchId = branchId;
+		this.txtDOB = txtDOB;
 		convert = new Converter();
 	}
+	
 }

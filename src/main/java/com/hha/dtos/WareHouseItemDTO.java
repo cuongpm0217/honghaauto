@@ -1,7 +1,5 @@
 package com.hha.dtos;
 
-import java.util.Date;
-
 public class WareHouseItemDTO extends BaseDTO {
 
 	private long id;
@@ -27,11 +25,12 @@ public class WareHouseItemDTO extends BaseDTO {
 	public WareHouseItemDTO() {
 	}
 
-	public WareHouseItemDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, String name) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
+	public WareHouseItemDTO(long id, String name) {
+		super();
 		this.id = id;
 		this.name = name;
 	}
+
+	
 	
 }

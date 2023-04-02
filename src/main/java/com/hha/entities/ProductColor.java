@@ -42,14 +42,6 @@ public class ProductColor extends BaseEntity {
 		this.productId = productId;
 	}
 
-	public ProductColor(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, long color_id, long productId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.color_id = color_id;
-		this.productId = productId;
-	}
-
 	public ProductColor(long id, long color_id, long productId) {
 		this.id = id;
 		this.color_id = color_id;

@@ -5,46 +5,25 @@ import com.hha.utils.Converter;
 import java.util.Date;
 
 public class InvoiceDTO extends BaseDTO {
-
 	private long id;
-
 	private long typeId;
-
 	private long cusId;
-
 	private long empId;
-
 	private String tittle;
-
 	private long total;
-
 	private Date startedDate;
-
 	private Date endDate;
-
 	private String logoUrl;
-
 	private String telBranch;
-
 	private String addBranch;
-
 	private String bankAcc1;
-
 	private String bankAcc2;
-
-	private String currencyId;
+	private String currencyId;	
+	private long branchId;	
+	
 	private String txtStartedDate;
-	private String txtEndDate;
+	private String txtEndDate;	
 	private Converter convert;
-	private boolean isEnable;
-
-	public boolean isEnable() {
-		return isEnable;
-	}
-
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
 
 	public String getTxtStartedDate() {
 		txtStartedDate = convert.txtDMYHH(this.startedDate);
@@ -176,10 +155,22 @@ public class InvoiceDTO extends BaseDTO {
 		this.currencyId = currencyId;
 	}
 
-	public InvoiceDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,boolean isEnable, long id,
-			long typeId, long cusId, long empId, String tittle, long total, Date startedDate, Date endDate,
-			String logoUrl, String telBranch, String addBranch, String bankAcc1, String bankAcc2, String currencyId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId,isEnable);
+	public long getBranchId() {
+		return branchId;
+	}
+
+	public void setBranchId(long branchId) {
+		this.branchId = branchId;
+	}
+
+	public InvoiceDTO() {
+		convert = new Converter();
+	}
+
+	public InvoiceDTO(long id, long typeId, long cusId, long empId, String tittle, long total, Date startedDate,
+			Date endDate, String logoUrl, String telBranch, String addBranch, String bankAcc1, String bankAcc2,
+			String currencyId, long branchId, String txtStartedDate, String txtEndDate) {
+		super();
 		this.id = id;
 		this.typeId = typeId;
 		this.cusId = cusId;
@@ -194,9 +185,9 @@ public class InvoiceDTO extends BaseDTO {
 		this.bankAcc1 = bankAcc1;
 		this.bankAcc2 = bankAcc2;
 		this.currencyId = currencyId;
-	}
-
-	public InvoiceDTO() {
+		this.branchId = branchId;
+		this.txtStartedDate = txtStartedDate;
+		this.txtEndDate = txtEndDate;
 		convert = new Converter();
 	}
 

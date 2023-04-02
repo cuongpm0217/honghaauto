@@ -29,13 +29,7 @@ public class TypeDTO extends BaseDTO{
 	public TypeDTO() {
 		
 	}
-	public TypeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, boolean isEnable,
-			long id, String genId, String name) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.genId = genId;
-		this.name = name;
-	}
+	
 	public TypeDTO(long id, String genId, String name) {		
 		this.id = id;
 		this.genId = genId;

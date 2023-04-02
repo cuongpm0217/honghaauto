@@ -1,7 +1,5 @@
 package com.hha.dtos;
 
-import java.util.Date;
-
 public class ProductImageDTO extends BaseDTO {
 	private long id;
 	private long productId;
@@ -28,14 +26,6 @@ public class ProductImageDTO extends BaseDTO {
 	}
 
 	public void setImageId(long imageId) {
-		this.imageId = imageId;
-	}
-
-	public ProductImageDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, long productId, long imageId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.productId = productId;
 		this.imageId = imageId;
 	}
 

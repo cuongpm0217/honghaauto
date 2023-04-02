@@ -42,15 +42,6 @@ public class ModuleDetail extends BaseEntity {
 	}
 
 	public ModuleDetail(long id, String name, long moduleId) {
-
-		this.id = id;
-		this.name = name;
-		this.moduleId = moduleId;
-	}
-
-	public ModuleDetail(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, String name, long moduleId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
 		this.id = id;
 		this.name = name;
 		this.moduleId = moduleId;

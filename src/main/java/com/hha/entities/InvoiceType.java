@@ -42,16 +42,7 @@ public class InvoiceType extends BaseEntity {
 		this.typeId = typeId;
 	}
 
-	public InvoiceType(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, long invoiceId, long typeId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.invoiceId = invoiceId;
-		this.typeId = typeId;
-	}
-
 	public InvoiceType(long id, long invoiceId, long typeId) {
-
 		this.id = id;
 		this.invoiceId = invoiceId;
 		this.typeId = typeId;

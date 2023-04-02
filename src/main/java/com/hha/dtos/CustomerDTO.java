@@ -15,9 +15,12 @@ public class CustomerDTO extends BaseDTO {
 	private String tel1;
 
 	private String tel2;
+	private String add1;
+	private String add2;
 
 	private Date DOB;
 	private String txtDOB;
+	private long branchId;
 	private Converter convert;
 
 	public long getId() {
@@ -76,16 +79,22 @@ public class CustomerDTO extends BaseDTO {
 	public void setTxtDOB(String txtDOB) {
 		this.txtDOB = convert.txtddMMyyyy(this.DOB);
 	}
+	
 
-	public CustomerDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,boolean isEnable, long id,
-			String name, String genId, String tel1, String tel2, Date dOB) {
-		super(createDate, modifyDate, userCreate, userModify, branchId,isEnable);
+	public CustomerDTO(long id, String name, String genId, String tel1, String tel2, String add1, String add2, Date dOB,
+			String txtDOB, long branchId) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.genId = genId;
 		this.tel1 = tel1;
 		this.tel2 = tel2;
+		this.add1 = add1;
+		this.add2 = add2;
 		DOB = dOB;
+		this.txtDOB = txtDOB;
+		this.branchId = branchId;
+		convert = new Converter();
 	}
 
 	public CustomerDTO() {

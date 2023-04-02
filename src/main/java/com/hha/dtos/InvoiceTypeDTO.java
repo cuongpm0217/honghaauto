@@ -1,9 +1,6 @@
 package com.hha.dtos;
 
-import java.util.Date;
-
 public class InvoiceTypeDTO extends BaseDTO {
-
 	private long id;
 	private long invoiceId;
 	private long typeId;
@@ -36,18 +33,10 @@ public class InvoiceTypeDTO extends BaseDTO {
 	}
 
 	public InvoiceTypeDTO(long id, long invoiceId, long typeId) {
-
 		this.id = id;
 		this.invoiceId = invoiceId;
 		this.typeId = typeId;
 	}
 
-	public InvoiceTypeDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, long invoiceId, long typeId) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.invoiceId = invoiceId;
-		this.typeId = typeId;
-	}
 
 }

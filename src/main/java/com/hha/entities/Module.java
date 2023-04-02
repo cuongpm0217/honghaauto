@@ -31,12 +31,10 @@ public class Module extends BaseEntity{
 	public Module() {
 		
 	}
-	public Module(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, boolean isEnable,
-			long id, String name) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
+	public Module(long id, String name) {
+		super();
 		this.id = id;
-		this.name = name;		
+		this.name = name;
 	}
-	
-	
+		
 }

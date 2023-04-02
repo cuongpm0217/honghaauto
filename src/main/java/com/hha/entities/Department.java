@@ -13,7 +13,7 @@ public class Department extends BaseEntity {
 	private long id;
 	@Column(name = "dep_name")
 	private String depName;
-	@Column(name = "dep_genid")
+	@Column(name = "dep_gen_id")
 	private String depGenId;
 
 	public long getId() {

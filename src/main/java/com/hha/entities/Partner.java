@@ -1,5 +1,7 @@
 package com.hha.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +23,10 @@ public class Partner extends BaseEntity {
 	private String add1;
 	@Column
 	private String add2;
-
+	@Column(name="bank_acc1")
+	private String bankAcc1;
+	@Column(name="bank_acc2")
+	private String bankAcc2;
 	public long getId() {
 		return id;
 	}
@@ -69,8 +74,11 @@ public class Partner extends BaseEntity {
 	public void setAdd2(String add2) {
 		this.add2 = add2;
 	}
+	public Partner() {
+	}
 
-	public Partner(long id, String name, String tel1, String tel2, String add1, String add2) {
+	public Partner(long id, String name, String tel1, String tel2, String add1, String add2, String bankAcc1,
+			String bankAcc2) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -78,8 +86,8 @@ public class Partner extends BaseEntity {
 		this.tel2 = tel2;
 		this.add1 = add1;
 		this.add2 = add2;
+		this.bankAcc1 = bankAcc1;
+		this.bankAcc2 = bankAcc2;
 	}
-
-	public Partner() {
-	}
+	
 }

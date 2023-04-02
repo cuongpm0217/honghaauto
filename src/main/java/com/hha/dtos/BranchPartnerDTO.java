@@ -1,42 +1,34 @@
 package com.hha.dtos;
 
-public class ProductPartnerDTO extends BaseDTO {
+public class BranchPartnerDTO extends BaseDTO{
 	private long id;
-	private long productId;
+	private long branchId;
 	private long partnerId;
-
 	public long getId() {
 		return id;
 	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
-
-	public long getProductId() {
-		return productId;
+	public long getBranchId() {
+		return branchId;
 	}
-
-	public void setProductId(long productId) {
-		this.productId = productId;
+	public void setBranchId(long branchId) {
+		this.branchId = branchId;
 	}
-
 	public long getPartnerId() {
 		return partnerId;
 	}
-
 	public void setPartnerId(long partnerId) {
 		this.partnerId = partnerId;
 	}
-
-	public ProductPartnerDTO(long id, long productId, long partnerId) {
+	public BranchPartnerDTO(long id, long branchId, long partnerId) {		
 		this.id = id;
-		this.productId = productId;
+		this.branchId = branchId;
 		this.partnerId = partnerId;
 	}
-
-	public ProductPartnerDTO() {
-
+	public BranchPartnerDTO() {
+		
 	}
-
+	
 }

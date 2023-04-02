@@ -62,11 +62,13 @@ public class PartnerDTO extends BaseDTO {
 
 	public void setAdd2(String add2) {
 		this.add2 = add2;
+	}	
+
+	public PartnerDTO() {
 	}
 
-	public PartnerDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, String name, String tel1, String tel2, String add1, String add2) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
+	public PartnerDTO(long id, String name, String tel1, String tel2, String add1, String add2) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.tel1 = tel1;
@@ -74,7 +76,5 @@ public class PartnerDTO extends BaseDTO {
 		this.add1 = add1;
 		this.add2 = add2;
 	}
-
-	public PartnerDTO() {
-	}
+	
 }

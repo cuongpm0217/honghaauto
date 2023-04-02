@@ -1,5 +1,5 @@
 package com.hha.entities;
 
 public enum EWareHouseItem {
-	EItem_Asset,EItem_Accessary ,EItem_Equipment
+	Item_Asset,Item_Accessary ,Item_Equipment
 }

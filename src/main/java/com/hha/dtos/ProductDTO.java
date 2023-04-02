@@ -81,20 +81,23 @@ public class ProductDTO extends BaseDTO {
 		this.expiry = expiry;
 	}	
 
-	public ProductDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId,
-			boolean isEnable, long id, String name, String genId, long costIn,	long costOut,	int guarantee, Date expiry) {
-		super(createDate, modifyDate, userCreate, userModify, branchId, isEnable);
-		this.id = id;
-		this.name = name;
-		this.genId = genId;		
-		this.costIn = costIn;
-		this.costOut = costOut;		
-		this.guarantee = guarantee;
-		this.expiry = expiry;
-		convert = new Converter();
-	}
-
 	public ProductDTO() {
 		convert = new Converter();
 	}
+
+	public ProductDTO(long id, String name, String genId, long costIn, long costOut, int guarantee, Date expiry,
+			String txtExpiry, Converter convert) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.genId = genId;
+		this.costIn = costIn;
+		this.costOut = costOut;
+		this.guarantee = guarantee;
+		this.expiry = expiry;
+		this.txtExpiry = txtExpiry;
+		this.convert = convert;
+		convert = new Converter();
+	}
+	
 }
