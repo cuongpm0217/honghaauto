@@ -9,11 +9,11 @@ public abstract class BaseDTO {
 	private Date modifyDate;
 	private long userCreate;
 	private long userModify;
-	private long branchId;
 	private String txtCreateDate;
 	private String txtModifyDate;
 	private Converter convert;
 	private boolean isEnable;
+
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -29,6 +29,7 @@ public abstract class BaseDTO {
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
+
 	public String getTxtCreateDate() {
 		txtCreateDate = convert.txtDMYHH(this.createDate);
 		return txtCreateDate;
@@ -46,6 +47,7 @@ public abstract class BaseDTO {
 	public void setTxtModifyDate(Date modifyDate) {
 		this.txtModifyDate = convert.txtDMYHH(modifyDate);
 	}
+
 	public long getUserCreate() {
 		return userCreate;
 	}
@@ -62,14 +64,6 @@ public abstract class BaseDTO {
 		this.userModify = userModify;
 	}
 
-	public long getBranchId() {
-		return branchId;
-	}
-
-	public void setBranchId(long branchId) {
-		this.branchId = branchId;
-	}
-	
 	public boolean isEnable() {
 		return isEnable;
 	}
@@ -78,12 +72,11 @@ public abstract class BaseDTO {
 		this.isEnable = isEnable;
 	}
 
-	public BaseDTO(Date createDate, Date modifyDate, long userCreate, long userModify, long branchId, boolean isEnable) {
+	public BaseDTO(Date createDate, Date modifyDate, long userCreate, long userModify, boolean isEnable) {
 		this.createDate = createDate;
 		this.modifyDate = modifyDate;
 		this.userCreate = userCreate;
 		this.userModify = userModify;
-		this.branchId = branchId;
 		this.isEnable = isEnable;
 	}
 
