@@ -1,86 +1,82 @@
 package com.hha.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Column;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class Product extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column(name = "name")
-	private String name;
-	@Column(name = "gen_id") // product code
-	private String genId;		
-	@Column(name = "cost_in")
-	private long costIn;
-	@Column(name = "cost_out")
-	private long costOut;	
-	@Column(name = "guarantee")
-	private int guarantee;// by month
-	@Column(name = "expiry")
-	private Date expiry;
-	
-	public long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "gen_id") // product code
+    private String genId;
+    @Column(name = "cost_in")
+    private long costIn;
+    @Column(name = "cost_out")
+    private long costOut;
+    @Column(name = "guarantee")
+    private int guarantee;// by month
+    @Column(name = "expiry")
+    private Date expiry;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public Product() {
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getGenId() {
-		return genId;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setGenId(String genId) {
-		this.genId = genId;
-	}
-	
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public long getCostIn() {
-		return costIn;
-	}
+    public String getGenId() {
+        return genId;
+    }
 
-	public void setCostIn(long costIn) {
-		this.costIn = costIn;
-	}
+    public void setGenId(String genId) {
+        this.genId = genId;
+    }
 
-	public long getCostOut() {
-		return costOut;
-	}
+    public long getCostIn() {
+        return costIn;
+    }
 
-	public void setCostOut(long costOut) {
-		this.costOut = costOut;
-	}
+    public void setCostIn(long costIn) {
+        this.costIn = costIn;
+    }
 
-	public int getGuarantee() {
-		return guarantee;
-	}
+    public long getCostOut() {
+        return costOut;
+    }
 
-	public void setGuarantee(int guarantee) {
-		this.guarantee = guarantee;
-	}
+    public void setCostOut(long costOut) {
+        this.costOut = costOut;
+    }
 
-	public Date getExpiry() {
-		return expiry;
-	}
+    public int getGuarantee() {
+        return guarantee;
+    }
 
-	public void setExpiry(Date expiry) {
-		this.expiry = expiry;
-	}	
-	public Product() {
-	}
+    public void setGuarantee(int guarantee) {
+        this.guarantee = guarantee;
+    }
+
+    public Date getExpiry() {
+        return expiry;
+    }
+
+    public void setExpiry(Date expiry) {
+        this.expiry = expiry;
+    }
 }

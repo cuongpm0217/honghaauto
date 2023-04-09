@@ -10,52 +10,53 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class ColorServiceImpl implements ColorService{
-	@Autowired
-	private ColorRepository repo;
-	@Override
-	public Color createColor(Color c) {
-		c.setEnable(true);
-		return repo.save(c);
-	}
+public class ColorServiceImpl implements ColorService {
+    @Autowired
+    private ColorRepository repo;
 
-	@Override
-	public Color updateColor(long id, Color c) {
-		Color color = repo.findById(id).get();
-		if(Objects.nonNull(color)||Objects.nonNull(c)) {
-			color.setCode(c.getCode());
-			color.setEnable(c.isEnable());
-			color.setName(c.getName());
-			color.setRgb(c.getRgb());
-		}
-		return repo.save(color);
-	}
+    @Override
+    public Color createColor(Color c) {
+        c.setEnable(true);
+        return repo.save(c);
+    }
 
-	@Override
-	public void deleteColor(long id) {
-		repo.deleteById(id);		
-	}
+    @Override
+    public Color updateColor(long id, Color c) {
+        Color color = repo.findById(id).get();
+        if (Objects.nonNull(color) || Objects.nonNull(c)) {
+            color.setCode(c.getCode());
+            color.setEnable(c.isEnable());
+            color.setName(c.getName());
+            color.setRgb(c.getRgb());
+        }
+        return repo.save(color);
+    }
 
-	@Override
-	public boolean hiddenColor(long id) {
-		Color color = repo.findById(id).get();
-		if(Objects.nonNull(color)||Objects.nonNull(id)) {
-			color.setEnable(false);
-			repo.save(color);
-			return true;
-		}else {
-			return false;
-		}		
-	}
+    @Override
+    public void deleteColor(long id) {
+        repo.deleteById(id);
+    }
 
-	@Override
-	public Color getColorById(long id) {
-		return repo.findById(id).get();
-	}
+    @Override
+    public boolean hiddenColor(long id) {
+        Color color = repo.findById(id).get();
+        if (Objects.nonNull(color) || Objects.nonNull(id)) {
+            color.setEnable(false);
+            repo.save(color);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-	@Override
-	public List<Color> getAllColor() {
-		return repo.findAll();
-	}
+    @Override
+    public Color getColorById(long id) {
+        return repo.findById(id).get();
+    }
+
+    @Override
+    public List<Color> getAllColor() {
+        return repo.findAll();
+    }
 
 }

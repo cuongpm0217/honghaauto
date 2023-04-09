@@ -1,23 +1,23 @@
 package com.hha.services;
 
-import java.util.List;
-
 import com.hha.entities.ProductVideo;
 
+import java.util.List;
+
 public interface ProductVideoService {
-	ProductVideo create(ProductVideo pv);
+    ProductVideo create(ProductVideo pv);
 
-	ProductVideo update(long id, ProductVideo pv);
+    ProductVideo update(long id, ProductVideo pv);
 
-	void delete(long id);
+    void delete(long id);
 
-	boolean hidden(long id);
+    boolean hidden(long id);
 
-	ProductVideo getById(long id);
+    ProductVideo getById(long id);
 
-	List<ProductVideo> getAll();
+    List<ProductVideo> getAll();
 
-	List<ProductVideo> getAllByProductId(long id);
+    List<ProductVideo> getAllByProductId(long id);
 
-	List<ProductVideo> getAllByVideoId(long id);
+    List<ProductVideo> getAllByVideoId(long id);
 }

@@ -1,42 +1,42 @@
 package com.hha.dtos;
 
 public class ProductPartnerDTO extends BaseDTO {
-	private long id;
-	private long productId;
-	private long partnerId;
+    private long id;
+    private long productId;
+    private long partnerId;
 
-	public long getId() {
-		return id;
-	}
+    public ProductPartnerDTO(long id, long productId, long partnerId) {
+        this.id = id;
+        this.productId = productId;
+        this.partnerId = partnerId;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public ProductPartnerDTO() {
 
-	public long getProductId() {
-		return productId;
-	}
+    }
 
-	public void setProductId(long productId) {
-		this.productId = productId;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public long getPartnerId() {
-		return partnerId;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setPartnerId(long partnerId) {
-		this.partnerId = partnerId;
-	}
+    public long getProductId() {
+        return productId;
+    }
 
-	public ProductPartnerDTO(long id, long productId, long partnerId) {
-		this.id = id;
-		this.productId = productId;
-		this.partnerId = partnerId;
-	}
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
 
-	public ProductPartnerDTO() {
+    public long getPartnerId() {
+        return partnerId;
+    }
 
-	}
+    public void setPartnerId(long partnerId) {
+        this.partnerId = partnerId;
+    }
 
 }

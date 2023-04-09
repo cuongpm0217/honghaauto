@@ -1,42 +1,42 @@
 package com.hha.dtos;
 
 public class InvoiceTypeDTO extends BaseDTO {
-	private long id;
-	private long invoiceId;
-	private long typeId;
+    private long id;
+    private long invoiceId;
+    private long typeId;
 
-	public long getId() {
-		return id;
-	}
+    public InvoiceTypeDTO() {
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public InvoiceTypeDTO(long id, long invoiceId, long typeId) {
+        this.id = id;
+        this.invoiceId = invoiceId;
+        this.typeId = typeId;
+    }
 
-	public long getInvoiceId() {
-		return invoiceId;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setInvoiceId(long invoiceId) {
-		this.invoiceId = invoiceId;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public long getTypeId() {
-		return typeId;
-	}
+    public long getInvoiceId() {
+        return invoiceId;
+    }
 
-	public void setTypeId(long typeId) {
-		this.typeId = typeId;
-	}
+    public void setInvoiceId(long invoiceId) {
+        this.invoiceId = invoiceId;
+    }
 
-	public InvoiceTypeDTO() {
-	}
+    public long getTypeId() {
+        return typeId;
+    }
 
-	public InvoiceTypeDTO(long id, long invoiceId, long typeId) {
-		this.id = id;
-		this.invoiceId = invoiceId;
-		this.typeId = typeId;
-	}
+    public void setTypeId(long typeId) {
+        this.typeId = typeId;
+    }
 
 
 }

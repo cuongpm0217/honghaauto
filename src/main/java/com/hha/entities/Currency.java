@@ -1,64 +1,60 @@
 package com.hha.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Currency extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column
-	private String code;// exp:VND ...
-	@Column
-	private String name;// VietNamDong
-	@Column(name = "rate") // exchange rate
-	private double rate;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
+    private String code;// exp:VND ...
+    @Column
+    private String name;// VietNamDong
+    @Column(name = "rate") // exchange rate
+    private double rate;
 
-	public double getRate() {
-		return rate;
-	}
+    public Currency() {
+    }
 
-	public void setRate(double rate) {
-		this.rate = rate;
-	}
+    public Currency(long id, String code, String name, double rate) {
+        super();
+        this.id = id;
+        this.code = code;
+        this.name = name;
+        this.rate = rate;
+    }
 
-	public long getId() {
-		return id;
-	}
+    public double getRate() {
+        return rate;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public Currency() {
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Currency(long id, String code, String name, double rate) {
-		super();
-		this.id = id;
-		this.code = code;
-		this.name = name;
-		this.rate = rate;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }

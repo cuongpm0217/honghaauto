@@ -1,53 +1,37 @@
 package com.hha.entities;
 
-import javax.persistence.Entity;
-
-import javax.persistence.Enumerated;
-import javax.persistence.EnumType;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Column;
+import javax.persistence.*;
 
 @Entity
-public class Role extends BaseEntity{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false, unique = true,length=50)
-	private ERole name;
-	@Column(name="is_enable")
-	private boolean isEnable;
-	
-	public boolean isEnable() {
-		return isEnable;
-	}
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
-	public long getId() {
-		return id;
-	}
+public class Role extends BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, unique = true, length = 50)
+    private ERole name;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public Role(long id, ERole name) {
+        this.id = id;
+        this.name = name;
+    }
 
-	public ERole getName() {
-		return name;
-	}
+    public Role() {
+    }
 
-	public void setName(ERole name) {
-		this.name = name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public Role(long id, ERole name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public Role() {
-	}
+    public ERole getName() {
+        return name;
+    }
+
+    public void setName(ERole name) {
+        this.name = name;
+    }
 }

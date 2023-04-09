@@ -1,44 +1,38 @@
 package com.hha.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Column;
+import javax.persistence.*;
 
 @Entity
 
 public class WareHouseItem extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Enumerated(EnumType.STRING)
-	@Column(length=50)
-	private EWareHouseItem name;// Fixed assets,accessary ,equipment
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 50)
+    private EWareHouseItem name;// Fixed assets,accessary ,equipment
 
-	public long getId() {
-		return id;
-	}
+    public WareHouseItem(long id, EWareHouseItem name) {
+        this.id = id;
+        this.name = name;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public WareHouseItem() {
+    }
 
-	public EWareHouseItem getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(EWareHouseItem name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public WareHouseItem(long id, EWareHouseItem name) {		
-		this.id = id;
-		this.name = name;
-	}
+    public EWareHouseItem getName() {
+        return name;
+    }
 
-	public WareHouseItem() {
-	}
+    public void setName(EWareHouseItem name) {
+        this.name = name;
+    }
 }

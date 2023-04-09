@@ -6,10 +6,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtUtil {
-	private static final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
-	public boolean validateJwtToken(String authToken) {
-		
-		return false;
-	}
+    private static final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
+
+    public boolean validateJwtToken(String authToken) {
+
+        return false;
+    }
 
 }

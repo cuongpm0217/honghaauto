@@ -1,34 +1,32 @@
 package com.hha.dtos;
 
-import java.util.Date;
-
 public class RoleDTO extends BaseDTO {
-	private long id;
-	private String name;
+    private long id;
+    private String name;
 
-	public long getId() {
-		return id;
-	}
+    public RoleDTO() {
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public RoleDTO(long id, String name) {
+        super();
+        this.id = id;
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public RoleDTO() {
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public RoleDTO(long id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }

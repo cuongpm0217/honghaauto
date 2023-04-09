@@ -5,15 +5,15 @@ import com.hha.entities.Account;
 import java.util.List;
 
 public interface AccountService {
-	Account create(Account acc);
+    Account create(Account acc);
 
-	Account update(long id, Account acc);
+    Account update(long id, Account acc);
 
-	void delete(long id);
+    void delete(long id);
 
-	boolean hidden(long id);
+    boolean hidden(long id);
 
-	Account getById(long id);
+    Account getById(long id);
 
-	List<Account> getAll();
+    List<Account> getAll();
 }

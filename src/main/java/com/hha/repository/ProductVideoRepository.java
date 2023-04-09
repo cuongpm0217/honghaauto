@@ -1,11 +1,10 @@
 package com.hha.repository;
 
+import com.hha.entities.ProductVideo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.hha.entities.ProductVideo;
-
 @Repository
-public interface ProductVideoRepository extends JpaRepository<ProductVideo, Long>{
+public interface ProductVideoRepository extends JpaRepository<ProductVideo, Long> {
 
 }

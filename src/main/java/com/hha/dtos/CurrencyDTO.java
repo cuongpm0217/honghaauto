@@ -1,54 +1,54 @@
 package com.hha.dtos;
 
-public class CurrencyDTO extends BaseDTO{
-	private long id;
+public class CurrencyDTO extends BaseDTO {
+    private long id;
 
-	private String code;// exp:VND ...
+    private String code;// exp:VND ...
 
-	private String name;// Vietnam Dong
-	private double rate;
-	
-	public long getId() {
-		return id;
-	}
+    private String name;// Vietnam Dong
+    private double rate;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public CurrencyDTO() {
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public CurrencyDTO(long id, String code, String name, double rate) {
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+        this.id = id;
+        this.code = code;
+        this.name = name;
+        this.rate = rate;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public double getRate() {
-		return rate;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setRate(double rate) {
-		this.rate = rate;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public CurrencyDTO() {
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public CurrencyDTO(long id, String code, String name, double rate) {
-		
-		this.id = id;
-		this.code = code;
-		this.name = name;
-		this.rate = rate;
-	}
-	
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
 }

@@ -1,84 +1,81 @@
 package com.hha.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Entity
 public class InvoiceDetail extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column(nullable = false, name = "invoice_id")
-	private long invoiceId;
-	@Column(nullable = false, name = "product_id")
-	private long productId;
-	@Column
-	private int quantity;
-	@Column
-	private long cost;
-	@Column
-	private String note;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(nullable = false, name = "invoice_id")
+    private long invoiceId;
+    @Column(nullable = false, name = "product_id")
+    private long productId;
+    @Column
+    private int quantity;
+    @Column
+    private long cost;
+    @Column
+    private String note;
 
-	public long getId() {
-		return id;
-	}
+    public InvoiceDetail() {
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public InvoiceDetail(long id, long invoiceId, long productId, int quantity, long cost, String note) {
+        this.id = id;
+        this.invoiceId = invoiceId;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.cost = cost;
+        this.note = note;
+    }
 
-	public long getInvoiceId() {
-		return invoiceId;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setInvoiceId(long invoiceId) {
-		this.invoiceId = invoiceId;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public long getProductId() {
-		return productId;
-	}
+    public long getInvoiceId() {
+        return invoiceId;
+    }
 
-	public void setProductId(long productId) {
-		this.productId = productId;
-	}
+    public void setInvoiceId(long invoiceId) {
+        this.invoiceId = invoiceId;
+    }
 
-	public int getQuantity() {
-		return quantity;
-	}
+    public long getProductId() {
+        return productId;
+    }
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
 
-	public long getCost() {
-		return cost;
-	}
+    public int getQuantity() {
+        return quantity;
+    }
 
-	public void setCost(long cost) {
-		this.cost = cost;
-	}
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-	public String getNote() {
-		return note;
-	}
+    public long getCost() {
+        return cost;
+    }
 
-	public void setNote(String note) {
-		this.note = note;
-	}
+    public void setCost(long cost) {
+        this.cost = cost;
+    }
 
-	public InvoiceDetail() {
-	}
+    public String getNote() {
+        return note;
+    }
 
-	public InvoiceDetail(long id, long invoiceId, long productId, int quantity, long cost, String note) {
-		this.id = id;
-		this.invoiceId = invoiceId;
-		this.productId = productId;
-		this.quantity = quantity;
-		this.cost = cost;
-		this.note = note;
-	}
+    public void setNote(String note) {
+        this.note = note;
+    }
 
 }

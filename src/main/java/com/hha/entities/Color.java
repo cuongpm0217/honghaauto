@@ -1,63 +1,59 @@
 package com.hha.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Color extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column
-	private String name;
-	@Column
-	private String rgb;
-	@Column
-	private String code;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
+    private String name;
+    @Column
+    private String rgb;
+    @Column
+    private String code;
 
-	public long getId() {
-		return id;
-	}
+    public Color() {
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public Color(long id, String name, String rgb, String code) {
+        this.id = id;
+        this.name = name;
+        this.rgb = rgb;
+        this.code = code;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getRgb() {
-		return rgb;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setRgb(String rgb) {
-		this.rgb = rgb;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getRgb() {
+        return rgb;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setRgb(String rgb) {
+        this.rgb = rgb;
+    }
 
-	public Color() {
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public Color(long id, String name, String rgb, String code) {
-		this.id = id;
-		this.name = name;
-		this.rgb = rgb;
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
 }

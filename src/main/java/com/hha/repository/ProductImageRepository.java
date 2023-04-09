@@ -1,11 +1,10 @@
 package com.hha.repository;
 
+import com.hha.entities.ProductImage;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.hha.entities.ProductImage;
-
 @Repository
-public interface ProductImageRepository extends JpaRepository<ProductImage, Long>{
+public interface ProductImageRepository extends JpaRepository<ProductImage, Long> {
 
 }

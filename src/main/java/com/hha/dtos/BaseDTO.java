@@ -5,82 +5,82 @@ import com.hha.utils.Converter;
 import java.util.Date;
 
 public abstract class BaseDTO {
-	protected Date createDate;
-	private Date modifyDate;
-	private long userCreate;
-	private long userModify;
-	private String txtCreateDate;
-	private String txtModifyDate;
-	private Converter convert;
-	private boolean isEnable;
+    protected Date createDate;
+    private Date modifyDate;
+    private long userCreate;
+    private long userModify;
+    private String txtCreateDate;
+    private String txtModifyDate;
+    private Converter convert;
+    private boolean isEnable;
 
-	public Date getCreateDate() {
-		return createDate;
-	}
+    public BaseDTO(Date createDate, Date modifyDate, long userCreate, long userModify, boolean isEnable) {
+        this.createDate = createDate;
+        this.modifyDate = modifyDate;
+        this.userCreate = userCreate;
+        this.userModify = userModify;
+        this.isEnable = isEnable;
+    }
 
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
+    public BaseDTO() {
+        convert = new Converter();
+    }
 
-	public Date getModifyDate() {
-		return modifyDate;
-	}
+    public Date getCreateDate() {
+        return createDate;
+    }
 
-	public void setModifyDate(Date modifyDate) {
-		this.modifyDate = modifyDate;
-	}
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
 
-	public String getTxtCreateDate() {
-		txtCreateDate = convert.txtDMYHH(this.createDate);
-		return txtCreateDate;
-	}
+    public Date getModifyDate() {
+        return modifyDate;
+    }
 
-	public void setTxtCreateDate(Date createDate) {
-		this.txtCreateDate = convert.txtDMYHH(createDate);
-	}
+    public void setModifyDate(Date modifyDate) {
+        this.modifyDate = modifyDate;
+    }
 
-	public String getTxtModifyDate() {
-		txtModifyDate = convert.txtDMYHH(this.modifyDate);
-		return txtModifyDate;
-	}
+    public String getTxtCreateDate() {
+        txtCreateDate = convert.txtDMYHH(this.createDate);
+        return txtCreateDate;
+    }
 
-	public void setTxtModifyDate(Date modifyDate) {
-		this.txtModifyDate = convert.txtDMYHH(modifyDate);
-	}
+    public void setTxtCreateDate(Date createDate) {
+        this.txtCreateDate = convert.txtDMYHH(createDate);
+    }
 
-	public long getUserCreate() {
-		return userCreate;
-	}
+    public String getTxtModifyDate() {
+        txtModifyDate = convert.txtDMYHH(this.modifyDate);
+        return txtModifyDate;
+    }
 
-	public void setUserCreate(long userCreate) {
-		this.userCreate = userCreate;
-	}
+    public void setTxtModifyDate(Date modifyDate) {
+        this.txtModifyDate = convert.txtDMYHH(modifyDate);
+    }
 
-	public long getUserModify() {
-		return userModify;
-	}
+    public long getUserCreate() {
+        return userCreate;
+    }
 
-	public void setUserModify(long userModify) {
-		this.userModify = userModify;
-	}
+    public void setUserCreate(long userCreate) {
+        this.userCreate = userCreate;
+    }
 
-	public boolean isEnable() {
-		return isEnable;
-	}
+    public long getUserModify() {
+        return userModify;
+    }
 
-	public void setEnable(boolean isEnable) {
-		this.isEnable = isEnable;
-	}
+    public void setUserModify(long userModify) {
+        this.userModify = userModify;
+    }
 
-	public BaseDTO(Date createDate, Date modifyDate, long userCreate, long userModify, boolean isEnable) {
-		this.createDate = createDate;
-		this.modifyDate = modifyDate;
-		this.userCreate = userCreate;
-		this.userModify = userModify;
-		this.isEnable = isEnable;
-	}
+    public boolean isEnable() {
+        return isEnable;
+    }
 
-	public BaseDTO() {
-		convert = new Converter();
-	}
+    public void setEnable(boolean isEnable) {
+        this.isEnable = isEnable;
+    }
 }

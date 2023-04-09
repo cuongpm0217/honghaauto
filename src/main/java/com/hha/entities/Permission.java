@@ -1,44 +1,39 @@
 package com.hha.entities;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 
 @Entity
-public class Permission extends BaseEntity{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	
-	@Enumerated(EnumType.STRING)
-	@Column(length=50)
-	private EPermission action;
+public class Permission extends BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-	public long getId() {
-		return id;
-	}
+    @Enumerated(EnumType.STRING)
+    @Column(length = 50)
+    private EPermission action;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public Permission(long id, EPermission action) {
+        super();
+        this.id = id;
+        this.action = action;
+    }
 
-	public EPermission getAction() {
-		return action;
-	}
+    public Permission() {
+    }
 
-	public void setAction(EPermission action) {
-		this.action = action;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public Permission(long id, EPermission action) {
-		super();
-		this.id = id;
-		this.action = action;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public Permission() {
-	}
+    public EPermission getAction() {
+        return action;
+    }
+
+    public void setAction(EPermission action) {
+        this.action = action;
+    }
 }

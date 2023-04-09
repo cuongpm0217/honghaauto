@@ -1,77 +1,70 @@
 package com.hha.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-
-import java.util.Date;
-
-import javax.persistence.Column;
+import javax.persistence.*;
 
 @Entity
 public class ProductType extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column
-	private String name;
-	@Column(name = "gen_id") // product type code
-	private String genId;
-	@Column(name = "product_id", nullable = false)
-	private long productId;
-	@Column(name = "type_id", nullable = false)
-	private long typeId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
+    private String name;
+    @Column(name = "gen_id") // product type code
+    private String genId;
+    @Column(name = "product_id", nullable = false)
+    private long productId;
+    @Column(name = "type_id", nullable = false)
+    private long typeId;
 
-	public long getId() {
-		return id;
-	}
+    public ProductType() {
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public ProductType(long id, String name, String genId, long productId, long typeId) {
+        this.id = id;
+        this.name = name;
+        this.genId = genId;
+        this.productId = productId;
+        this.typeId = typeId;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getGenId() {
-		return genId;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setGenId(String genId) {
-		this.genId = genId;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public long getProductId() {
-		return productId;
-	}
+    public String getGenId() {
+        return genId;
+    }
 
-	public void setProductId(long productId) {
-		this.productId = productId;
-	}
+    public void setGenId(String genId) {
+        this.genId = genId;
+    }
 
-	public long getTypeId() {
-		return typeId;
-	}
+    public long getProductId() {
+        return productId;
+    }
 
-	public void setTypeId(long typeId) {
-		this.typeId = typeId;
-	}
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
 
-	public ProductType() {
-	}
+    public long getTypeId() {
+        return typeId;
+    }
 
-	public ProductType(long id, String name, String genId, long productId, long typeId) {
-		this.id = id;
-		this.name = name;
-		this.genId = genId;
-		this.productId = productId;
-		this.typeId = typeId;
-	}
+    public void setTypeId(long typeId) {
+        this.typeId = typeId;
+    }
 
 }

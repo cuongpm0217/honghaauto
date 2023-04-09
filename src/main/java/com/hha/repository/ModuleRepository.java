@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ModuleRepository extends JpaRepository<Module, Long>{
-	@Query(value="Select * from module where name =:moduleName",nativeQuery=true)
-	Optional<Module> findByName(@Param("moduleName") String moduleName);
+public interface ModuleRepository extends JpaRepository<Module, Long> {
+    @Query(value = "Select * from module where name =:moduleName", nativeQuery = true)
+    Optional<Module> findByName(@Param("moduleName") String moduleName);
 }

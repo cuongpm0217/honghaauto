@@ -1,52 +1,48 @@
 package com.hha.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Department extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column(name = "dep_name")
-	private String depName;
-	@Column(name = "dep_gen_id")
-	private String depGenId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "dep_name")
+    private String depName;
+    @Column(name = "dep_gen_id")
+    private String depGenId;
 
-	public long getId() {
-		return id;
-	}
+    public Department() {
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public Department(long id, String depName, String depGenId) {
+        this.id = id;
+        this.depName = depName;
+        this.depGenId = depGenId;
+    }
 
-	public String getDepName() {
-		return depName;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setDepName(String depName) {
-		this.depName = depName;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getDepGenId() {
-		return depGenId;
-	}
+    public String getDepName() {
+        return depName;
+    }
 
-	public void setDepGenId(String depGenId) {
-		this.depGenId = depGenId;
-	}
+    public void setDepName(String depName) {
+        this.depName = depName;
+    }
 
-	public Department() {
-	}
+    public String getDepGenId() {
+        return depGenId;
+    }
 
-	public Department(long id, String depName, String depGenId) {
-		this.id = id;
-		this.depName = depName;
-		this.depGenId = depGenId;
-	}
+    public void setDepGenId(String depGenId) {
+        this.depGenId = depGenId;
+    }
 
 }

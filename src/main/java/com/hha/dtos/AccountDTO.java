@@ -2,53 +2,53 @@ package com.hha.dtos;
 
 public class AccountDTO extends BaseDTO {
 
-	private long id;
+    private long id;
 
-	private String code;
+    private String code;
 
-	private String name;
+    private String name;
 
-	private int lever;// 0-2:sub-account, account example: 131,1311
-	
-	public long getId() {
-		return id;
-	}
+    private int lever;// 0-2:sub-account, account example: 131,1311
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public AccountDTO(long id, String code, String name, int lever) {
+        this.id = id;
+        this.code = code;
+        this.name = name;
+        this.lever = lever;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public AccountDTO() {
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public int getLever() {
-		return lever;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public void setLever(int lever) {
-		this.lever = lever;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public AccountDTO(long id, String code, String name, int lever) {
-		this.id = id;
-		this.code = code;
-		this.name = name;
-		this.lever = lever;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public AccountDTO() {
-	}
+    public int getLever() {
+        return lever;
+    }
+
+    public void setLever(int lever) {
+        this.lever = lever;
+    }
 }

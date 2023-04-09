@@ -5,99 +5,99 @@ import com.hha.utils.Converter;
 import java.util.Date;
 
 public class ProductDTO extends BaseDTO {
-	private long id;
-	private String name;
-	// product code
-	private String genId;
-	private long costIn;
-	private long costOut;
-	private int guarantee;// by month
-	private Date expiry;
-	private String txtExpiry;
-	private Converter convert;
+    private long id;
+    private String name;
+    // product code
+    private String genId;
+    private long costIn;
+    private long costOut;
+    private int guarantee;// by month
+    private Date expiry;
+    private String txtExpiry;
+    private Converter convert;
 
-	public String getTxtExpiry() {
-		txtExpiry = convert.txtddMMyyyy(this.expiry);
-		return txtExpiry;
-	}
+    public ProductDTO() {
+        convert = new Converter();
+    }
 
-	public void setTxtExpiry(String txtExpiry) {
-		this.txtExpiry = convert.txtddMMyyyy(this.expiry);
-	}
+    public ProductDTO(long id, String name, String genId, long costIn, long costOut, int guarantee, Date expiry,
+                      String txtExpiry, Converter convert) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.genId = genId;
+        this.costIn = costIn;
+        this.costOut = costOut;
+        this.guarantee = guarantee;
+        this.expiry = expiry;
+        this.txtExpiry = txtExpiry;
+        this.convert = convert;
+        convert = new Converter();
+    }
 
-	public long getId() {
-		return id;
-	}
+    public String getTxtExpiry() {
+        txtExpiry = convert.txtddMMyyyy(this.expiry);
+        return txtExpiry;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setTxtExpiry(String txtExpiry) {
+        this.txtExpiry = convert.txtddMMyyyy(this.expiry);
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getGenId() {
-		return genId;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setGenId(String genId) {
-		this.genId = genId;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public long getCostIn() {
-		return costIn;
-	}
+    public String getGenId() {
+        return genId;
+    }
 
-	public void setCostIn(long costIn) {
-		this.costIn = costIn;
-	}
+    public void setGenId(String genId) {
+        this.genId = genId;
+    }
 
-	public long getCostOut() {
-		return costOut;
-	}
+    public long getCostIn() {
+        return costIn;
+    }
 
-	public void setCostOut(long costOut) {
-		this.costOut = costOut;
-	}
+    public void setCostIn(long costIn) {
+        this.costIn = costIn;
+    }
 
-	public int getGuarantee() {
-		return guarantee;
-	}
+    public long getCostOut() {
+        return costOut;
+    }
 
-	public void setGuarantee(int guarantee) {
-		this.guarantee = guarantee;
-	}
+    public void setCostOut(long costOut) {
+        this.costOut = costOut;
+    }
 
-	public Date getExpiry() {
-		return expiry;
-	}
+    public int getGuarantee() {
+        return guarantee;
+    }
 
-	public void setExpiry(Date expiry) {
-		this.expiry = expiry;
-	}	
+    public void setGuarantee(int guarantee) {
+        this.guarantee = guarantee;
+    }
 
-	public ProductDTO() {
-		convert = new Converter();
-	}
+    public Date getExpiry() {
+        return expiry;
+    }
 
-	public ProductDTO(long id, String name, String genId, long costIn, long costOut, int guarantee, Date expiry,
-			String txtExpiry, Converter convert) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.genId = genId;
-		this.costIn = costIn;
-		this.costOut = costOut;
-		this.guarantee = guarantee;
-		this.expiry = expiry;
-		this.txtExpiry = txtExpiry;
-		this.convert = convert;
-		convert = new Converter();
-	}
-	
+    public void setExpiry(Date expiry) {
+        this.expiry = expiry;
+    }
+
 }

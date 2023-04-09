@@ -11,53 +11,53 @@ import java.util.Objects;
 
 @Service
 public class BranchServiceImpl implements BranchService {
-	@Autowired
-	private BranchRepository repo;
+    @Autowired
+    private BranchRepository repo;
 
-	@Override
-	public Branch createBranch(Branch branch) {
-		branch.setEnable(true);
-		return repo.save(branch);
-	}
+    @Override
+    public Branch createBranch(Branch branch) {
+        branch.setEnable(true);
+        return repo.save(branch);
+    }
 
-	@Override
-	public Branch updateBranch(long id, Branch branch) {
-		Branch brc = repo.findById(id).get();
-		if (Objects.nonNull(brc)||Objects.nonNull(branch)) {
-			brc.setGenId(branch.getGenId());		
-			brc.setLever(branch.getLever());			
-			brc.setName(branch.getName());			
-		}
-		return repo.save(brc);
-	}
+    @Override
+    public Branch updateBranch(long id, Branch branch) {
+        Branch brc = repo.findById(id).get();
+        if (Objects.nonNull(brc) || Objects.nonNull(branch)) {
+            brc.setGenId(branch.getGenId());
+            brc.setLever(branch.getLever());
+            brc.setName(branch.getName());
+        }
+        return repo.save(brc);
+    }
 
-	@Override
-	public void deleteBranch(long id) {
-		repo.deleteById(id);		
-	}
+    @Override
+    public void deleteBranch(long id) {
+        repo.deleteById(id);
+    }
 
-	@Override
-	public Branch getBranchById(long id) {
-		Branch brc = repo.findById(id).get();
-		return brc;
-	}
+    @Override
+    public Branch getBranchById(long id) {
+        Branch brc = repo.findById(id).get();
+        return brc;
+    }
 
-	@Override
-	public List<Branch> getAllBranch() {		
-		return (List<Branch>)repo.findAll();
-	}
+    @Override
+    public List<Branch> getAllBranch() {
+        return (List<Branch>) repo.findAll();
+    }
 
-	@Override
-	public boolean hiddenBranch(long id) {
-		Branch brc = repo.findById(id).get();
-		if(brc!=null) {
-			brc.setEnable(false);
-			repo.save(brc);
-			return true;
-		}else {
-			return false;
-		}
-		
-	}
+    @Override
+    public boolean hiddenBranch(long id) {
+        Branch brc = repo.findById(id).get();
+        if (brc != null) {
+            brc.setEnable(false);
+            repo.save(brc);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
 }

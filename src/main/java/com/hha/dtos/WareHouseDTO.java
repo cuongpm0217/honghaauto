@@ -5,99 +5,99 @@ import com.hha.utils.Converter;
 import java.util.Date;
 
 public class WareHouseDTO extends BaseDTO {
-	private long id;
-	private long productId;
-	private long itemTypeId;
-	private Date dateInput;
-	private Date dateOutput;
-	private String txtDateInput;
-	private String txtDateOutput;	
-	private long invoiceDetailId;
-	private Converter convert;
-	
-	public long getId() {
-		return id;
-	}
+    private long id;
+    private long productId;
+    private long itemTypeId;
+    private Date dateInput;
+    private Date dateOutput;
+    private String txtDateInput;
+    private String txtDateOutput;
+    private long invoiceDetailId;
+    private Converter convert;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public WareHouseDTO() {
+        convert = new Converter();
+    }
 
-	public long getProductId() {
-		return productId;
-	}
+    public WareHouseDTO(long id, long productId, long itemTypeId, Date dateInput, Date dateOutput, String txtDateInput,
+                        String txtDateOutput, long invoiceDetailId) {
+        super();
+        this.id = id;
+        this.productId = productId;
+        this.itemTypeId = itemTypeId;
+        this.dateInput = dateInput;
+        this.dateOutput = dateOutput;
+        this.txtDateInput = txtDateInput;
+        this.txtDateOutput = txtDateOutput;
+        this.invoiceDetailId = invoiceDetailId;
+        convert = new Converter();
+    }
 
-	public void setProductId(long productId) {
-		this.productId = productId;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public long getItemTypeId() {
-		return itemTypeId;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setItemTypeId(long itemTypeId) {
-		this.itemTypeId = itemTypeId;
-	}
+    public long getProductId() {
+        return productId;
+    }
 
-	public Date getDateInput() {
-		return dateInput;
-	}
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
 
-	public void setDateInput(Date dateInput) {
-		this.dateInput = dateInput;
-	}
+    public long getItemTypeId() {
+        return itemTypeId;
+    }
 
-	public Date getDateOutput() {
-		return dateOutput;
-	}
+    public void setItemTypeId(long itemTypeId) {
+        this.itemTypeId = itemTypeId;
+    }
 
-	public void setDateOutput(Date dateOutput) {
-		this.dateOutput = dateOutput;
-	}
+    public Date getDateInput() {
+        return dateInput;
+    }
 
-	public String getTxtDateInput() {
-		txtDateInput = convert.txtDMYHH(this.dateInput);
-		return txtDateInput;
-	}
+    public void setDateInput(Date dateInput) {
+        this.dateInput = dateInput;
+    }
 
-	public void setTxtDateInput(String txtDateInput) {
-		this.txtDateInput = convert.txtDMYHH(this.dateInput);
-	}
+    public Date getDateOutput() {
+        return dateOutput;
+    }
 
-	public String getTxtDateOutput() {
-		txtDateOutput = convert.txtDMYHH(this.dateOutput);
-		return txtDateOutput;
-	}
+    public void setDateOutput(Date dateOutput) {
+        this.dateOutput = dateOutput;
+    }
 
-	public void setTxtDateOutput(String txtDateOutput) {
-		this.txtDateOutput = convert.txtDMYHH(this.dateOutput);
-	}
+    public String getTxtDateInput() {
+        txtDateInput = convert.txtDMYHH(this.dateInput);
+        return txtDateInput;
+    }
 
-	public long getInvoiceDetailId() {
-		return invoiceDetailId;
-	}
+    public void setTxtDateInput(String txtDateInput) {
+        this.txtDateInput = convert.txtDMYHH(this.dateInput);
+    }
 
-	public void setInvoiceDetailId(long invoiceDetailId) {
-		this.invoiceDetailId = invoiceDetailId;
-	}
-	public WareHouseDTO() {
-		convert = new Converter();
-	}
+    public String getTxtDateOutput() {
+        txtDateOutput = convert.txtDMYHH(this.dateOutput);
+        return txtDateOutput;
+    }
 
-	public WareHouseDTO(long id, long productId, long itemTypeId, Date dateInput, Date dateOutput, String txtDateInput,
-			String txtDateOutput, long invoiceDetailId) {
-		super();
-		this.id = id;
-		this.productId = productId;
-		this.itemTypeId = itemTypeId;
-		this.dateInput = dateInput;
-		this.dateOutput = dateOutput;
-		this.txtDateInput = txtDateInput;
-		this.txtDateOutput = txtDateOutput;
-		this.invoiceDetailId = invoiceDetailId;
-		convert = new Converter();
-	}
-	
-	
-	
+    public void setTxtDateOutput(String txtDateOutput) {
+        this.txtDateOutput = convert.txtDMYHH(this.dateOutput);
+    }
+
+    public long getInvoiceDetailId() {
+        return invoiceDetailId;
+    }
+
+    public void setInvoiceDetailId(long invoiceDetailId) {
+        this.invoiceDetailId = invoiceDetailId;
+    }
+
+
 }

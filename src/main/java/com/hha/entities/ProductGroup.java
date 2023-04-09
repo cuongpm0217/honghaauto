@@ -1,64 +1,62 @@
 package com.hha.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Column;
+import javax.persistence.*;
 
 @Entity
 public class ProductGroup extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column
-	private String name;
-	@Column(name = "gen_id") // code
-	private String genId;
-	@Column(name="product_id",nullable=false)
-	private long productId;
-	@Column(name="group_id",nullable=false)
-	private long groupId;
-	public long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
+    private String name;
+    @Column(name = "gen_id") // code
+    private String genId;
+    @Column(name = "product_id", nullable = false)
+    private long productId;
+    @Column(name = "group_id", nullable = false)
+    private long groupId;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public ProductGroup() {
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getGenId() {
-		return genId;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setGenId(String genId) {
-		this.genId = genId;
-	}
-	public long getProductId() {
-		return productId;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setProductId(long productId) {
-		this.productId = productId;
-	}
+    public String getGenId() {
+        return genId;
+    }
 
-	public long getGroupId() {
-		return groupId;
-	}
+    public void setGenId(String genId) {
+        this.genId = genId;
+    }
 
-	public void setGroupId(long groupId) {
-		this.groupId = groupId;
-	}
+    public long getProductId() {
+        return productId;
+    }
 
-	public ProductGroup() {
-	}
-	
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
+
+    public long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(long groupId) {
+        this.groupId = groupId;
+    }
+
 }

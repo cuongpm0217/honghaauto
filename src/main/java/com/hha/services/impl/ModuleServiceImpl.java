@@ -13,64 +13,64 @@ import java.util.Optional;
 
 @Service
 public class ModuleServiceImpl implements ModuleService {
-	@Autowired
-	private ModuleRepository repo;
+    @Autowired
+    private ModuleRepository repo;
 
-	@Override
-	public Module create(Module module) {
-		module.setEnable(true);
+    @Override
+    public Module create(Module module) {
+        module.setEnable(true);
 
-		return repo.save(module);
-	}
+        return repo.save(module);
+    }
 
-	@Override
-	public Module update(long id, Module module) {
-		Module mSelect = repo.findById(id).get();
-		if (Objects.nonNull(id) || Objects.nonNull(module) || Objects.nonNull(mSelect)) {
-			mSelect.setEnable(module.isEnable());
-			mSelect.setModifyDate(new Date());
-			mSelect.setName(module.getName());
-			mSelect.setUserModify(module.getUserModify());
-			repo.save(mSelect);
-		}
-		return mSelect;
-	}
+    @Override
+    public Module update(long id, Module module) {
+        Module mSelect = repo.findById(id).get();
+        if (Objects.nonNull(id) || Objects.nonNull(module) || Objects.nonNull(mSelect)) {
+            mSelect.setEnable(module.isEnable());
+            mSelect.setModifyDate(new Date());
+            mSelect.setName(module.getName());
+            mSelect.setUserModify(module.getUserModify());
+            repo.save(mSelect);
+        }
+        return mSelect;
+    }
 
-	@Override
-	public void delete(long id) {
-		repo.deleteById(id);
-	}
+    @Override
+    public void delete(long id) {
+        repo.deleteById(id);
+    }
 
-	@Override
-	public Module getById(long id) {
-		return repo.findById(id).get();
-	}
+    @Override
+    public Module getById(long id) {
+        return repo.findById(id).get();
+    }
 
-	@Override
-	public List<Module> getAll() {
-		return repo.findAll();
-	}
+    @Override
+    public List<Module> getAll() {
+        return repo.findAll();
+    }
 
-	@Override
-	public boolean hidden(long id) {
-		boolean result = false;
-		Module mSelect = repo.findById(id).get();
-		if (Objects.nonNull(id) || Objects.nonNull(mSelect)) {
-			mSelect.setEnable(false);
-			repo.save(mSelect);
-			result = true;
-		}
-		return result;
-	}
+    @Override
+    public boolean hidden(long id) {
+        boolean result = false;
+        Module mSelect = repo.findById(id).get();
+        if (Objects.nonNull(id) || Objects.nonNull(mSelect)) {
+            mSelect.setEnable(false);
+            repo.save(mSelect);
+            result = true;
+        }
+        return result;
+    }
 
-	@Override
-	public Module getByName(String name) {
-		Optional<Module> rows = repo.findByName(name);
-		if (rows.isPresent()) {
-			return rows.get();
-		} else {
-			return null;
-		}
-	}
+    @Override
+    public Module getByName(String name) {
+        Optional<Module> rows = repo.findByName(name);
+        if (rows.isPresent()) {
+            return rows.get();
+        } else {
+            return null;
+        }
+    }
 
 }

@@ -1,11 +1,10 @@
 package com.hha.repository;
 
+import com.hha.entities.Type;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.hha.entities.Type;
-
 @Repository
-public interface TypeRepository extends JpaRepository<Type, Long>{
+public interface TypeRepository extends JpaRepository<Type, Long> {
 
 }

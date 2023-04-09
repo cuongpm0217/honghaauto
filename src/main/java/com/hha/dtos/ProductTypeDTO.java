@@ -2,43 +2,43 @@ package com.hha.dtos;
 
 public class ProductTypeDTO extends BaseDTO {
 
-	private long id;
+    private long id;
 
-	private String name;
-	// product type code
-	private String genId;
+    private String name;
+    // product type code
+    private String genId;
 
-	public long getId() {
-		return id;
-	}
+    public ProductTypeDTO() {
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public ProductTypeDTO(long id, String name, String genId) {
+        this.id = id;
+        this.name = name;
+        this.genId = genId;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getGenId() {
-		return genId;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setGenId(String genId) {
-		this.genId = genId;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public ProductTypeDTO() {
-	}
+    public String getGenId() {
+        return genId;
+    }
 
-	public ProductTypeDTO(long id, String name, String genId) {
-		this.id = id;
-		this.name = name;
-		this.genId = genId;
-	}
+    public void setGenId(String genId) {
+        this.genId = genId;
+    }
 
 }

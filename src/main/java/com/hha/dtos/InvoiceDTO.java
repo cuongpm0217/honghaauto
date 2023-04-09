@@ -5,190 +5,190 @@ import com.hha.utils.Converter;
 import java.util.Date;
 
 public class InvoiceDTO extends BaseDTO {
-	private long id;
-	private long typeId;
-	private long cusId;
-	private long empId;
-	private String tittle;
-	private long total;
-	private Date startedDate;
-	private Date endDate;
-	private String logoUrl;
-	private String telBranch;
-	private String addBranch;
-	private String bankAcc1;
-	private String bankAcc2;
-	private String currencyId;	
-	private long branchId;	
-	
-	private String txtStartedDate;
-	private String txtEndDate;	
-	private Converter convert;
+    private long id;
+    private long typeId;
+    private long cusId;
+    private long empId;
+    private String tittle;
+    private long total;
+    private Date startedDate;
+    private Date endDate;
+    private String logoUrl;
+    private String telBranch;
+    private String addBranch;
+    private String bankAcc1;
+    private String bankAcc2;
+    private String currencyId;
+    private long branchId;
 
-	public String getTxtStartedDate() {
-		txtStartedDate = convert.txtDMYHH(this.startedDate);
-		return txtStartedDate;
-	}
+    private String txtStartedDate;
+    private String txtEndDate;
+    private Converter convert;
 
-	public void setTxtStartedDate(String txtStartedDate) {
-		this.txtStartedDate = convert.txtDMYHH(this.startedDate);
-	}
+    public InvoiceDTO() {
+        convert = new Converter();
+    }
 
-	public String getTxtEndDate() {
-		txtEndDate = convert.txtDMYHH(this.endDate);
-		return txtEndDate;
-	}
+    public InvoiceDTO(long id, long typeId, long cusId, long empId, String tittle, long total, Date startedDate,
+                      Date endDate, String logoUrl, String telBranch, String addBranch, String bankAcc1, String bankAcc2,
+                      String currencyId, long branchId, String txtStartedDate, String txtEndDate) {
+        super();
+        this.id = id;
+        this.typeId = typeId;
+        this.cusId = cusId;
+        this.empId = empId;
+        this.tittle = tittle;
+        this.total = total;
+        this.startedDate = startedDate;
+        this.endDate = endDate;
+        this.logoUrl = logoUrl;
+        this.telBranch = telBranch;
+        this.addBranch = addBranch;
+        this.bankAcc1 = bankAcc1;
+        this.bankAcc2 = bankAcc2;
+        this.currencyId = currencyId;
+        this.branchId = branchId;
+        this.txtStartedDate = txtStartedDate;
+        this.txtEndDate = txtEndDate;
+        convert = new Converter();
+    }
 
-	public void setTxtEndDate(String txtEndDate) {
-		this.txtEndDate = convert.txtDMYHH(this.endDate);
-	}
+    public String getTxtStartedDate() {
+        txtStartedDate = convert.txtDMYHH(this.startedDate);
+        return txtStartedDate;
+    }
 
-	public long getId() {
-		return id;
-	}
+    public void setTxtStartedDate(String txtStartedDate) {
+        this.txtStartedDate = convert.txtDMYHH(this.startedDate);
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public String getTxtEndDate() {
+        txtEndDate = convert.txtDMYHH(this.endDate);
+        return txtEndDate;
+    }
 
-	public long getTypeId() {
-		return typeId;
-	}
+    public void setTxtEndDate(String txtEndDate) {
+        this.txtEndDate = convert.txtDMYHH(this.endDate);
+    }
 
-	public void setTypeId(long typeId) {
-		this.typeId = typeId;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public long getCusId() {
-		return cusId;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setCusId(long cusId) {
-		this.cusId = cusId;
-	}
+    public long getTypeId() {
+        return typeId;
+    }
 
-	public long getEmpId() {
-		return empId;
-	}
+    public void setTypeId(long typeId) {
+        this.typeId = typeId;
+    }
 
-	public void setEmpId(long empId) {
-		this.empId = empId;
-	}
+    public long getCusId() {
+        return cusId;
+    }
 
-	public String getTittle() {
-		return tittle;
-	}
+    public void setCusId(long cusId) {
+        this.cusId = cusId;
+    }
 
-	public void setTittle(String tittle) {
-		this.tittle = tittle;
-	}
+    public long getEmpId() {
+        return empId;
+    }
 
-	public long getTotal() {
-		return total;
-	}
+    public void setEmpId(long empId) {
+        this.empId = empId;
+    }
 
-	public void setTotal(long total) {
-		this.total = total;
-	}
+    public String getTittle() {
+        return tittle;
+    }
 
-	public Date getStartedDate() {
-		return startedDate;
-	}
+    public void setTittle(String tittle) {
+        this.tittle = tittle;
+    }
 
-	public void setStartedDate(Date startedDate) {
-		this.startedDate = startedDate;
-	}
+    public long getTotal() {
+        return total;
+    }
 
-	public Date getEndDate() {
-		return endDate;
-	}
+    public void setTotal(long total) {
+        this.total = total;
+    }
 
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+    public Date getStartedDate() {
+        return startedDate;
+    }
 
-	public String getLogoUrl() {
-		return logoUrl;
-	}
+    public void setStartedDate(Date startedDate) {
+        this.startedDate = startedDate;
+    }
 
-	public void setLogoUrl(String logoUrl) {
-		this.logoUrl = logoUrl;
-	}
+    public Date getEndDate() {
+        return endDate;
+    }
 
-	public String getTelBranch() {
-		return telBranch;
-	}
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
 
-	public void setTelBranch(String telBranch) {
-		this.telBranch = telBranch;
-	}
+    public String getLogoUrl() {
+        return logoUrl;
+    }
 
-	public String getAddBranch() {
-		return addBranch;
-	}
+    public void setLogoUrl(String logoUrl) {
+        this.logoUrl = logoUrl;
+    }
 
-	public void setAddBranch(String addBranch) {
-		this.addBranch = addBranch;
-	}
+    public String getTelBranch() {
+        return telBranch;
+    }
 
-	public String getBankAcc1() {
-		return bankAcc1;
-	}
+    public void setTelBranch(String telBranch) {
+        this.telBranch = telBranch;
+    }
 
-	public void setBankAcc1(String bankAcc1) {
-		this.bankAcc1 = bankAcc1;
-	}
+    public String getAddBranch() {
+        return addBranch;
+    }
 
-	public String getBankAcc2() {
-		return bankAcc2;
-	}
+    public void setAddBranch(String addBranch) {
+        this.addBranch = addBranch;
+    }
 
-	public void setBankAcc2(String bankAcc2) {
-		this.bankAcc2 = bankAcc2;
-	}
+    public String getBankAcc1() {
+        return bankAcc1;
+    }
 
-	public String getCurrencyId() {
-		return currencyId;
-	}
+    public void setBankAcc1(String bankAcc1) {
+        this.bankAcc1 = bankAcc1;
+    }
 
-	public void setCurrencyId(String currencyId) {
-		this.currencyId = currencyId;
-	}
+    public String getBankAcc2() {
+        return bankAcc2;
+    }
 
-	public long getBranchId() {
-		return branchId;
-	}
+    public void setBankAcc2(String bankAcc2) {
+        this.bankAcc2 = bankAcc2;
+    }
 
-	public void setBranchId(long branchId) {
-		this.branchId = branchId;
-	}
+    public String getCurrencyId() {
+        return currencyId;
+    }
 
-	public InvoiceDTO() {
-		convert = new Converter();
-	}
+    public void setCurrencyId(String currencyId) {
+        this.currencyId = currencyId;
+    }
 
-	public InvoiceDTO(long id, long typeId, long cusId, long empId, String tittle, long total, Date startedDate,
-			Date endDate, String logoUrl, String telBranch, String addBranch, String bankAcc1, String bankAcc2,
-			String currencyId, long branchId, String txtStartedDate, String txtEndDate) {
-		super();
-		this.id = id;
-		this.typeId = typeId;
-		this.cusId = cusId;
-		this.empId = empId;
-		this.tittle = tittle;
-		this.total = total;
-		this.startedDate = startedDate;
-		this.endDate = endDate;
-		this.logoUrl = logoUrl;
-		this.telBranch = telBranch;
-		this.addBranch = addBranch;
-		this.bankAcc1 = bankAcc1;
-		this.bankAcc2 = bankAcc2;
-		this.currencyId = currencyId;
-		this.branchId = branchId;
-		this.txtStartedDate = txtStartedDate;
-		this.txtEndDate = txtEndDate;
-		convert = new Converter();
-	}
+    public long getBranchId() {
+        return branchId;
+    }
+
+    public void setBranchId(long branchId) {
+        this.branchId = branchId;
+    }
 
 }

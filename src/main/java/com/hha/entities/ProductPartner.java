@@ -1,55 +1,49 @@
 package com.hha.entities;
 
-import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class ProductPartner extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column(name = "product_id", nullable = false)
-	private long productId;
-	@Column(name = "partner_id", nullable = false)
-	private long partnerId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "product_id", nullable = false)
+    private long productId;
+    @Column(name = "partner_id", nullable = false)
+    private long partnerId;
 
-	public long getId() {
-		return id;
-	}
+    public ProductPartner(long id, long productId, long partnerId) {
+        this.id = id;
+        this.productId = productId;
+        this.partnerId = partnerId;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public ProductPartner() {
 
-	public long getProductId() {
-		return productId;
-	}
+    }
 
-	public void setProductId(long productId) {
-		this.productId = productId;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public long getPartnerId() {
-		return partnerId;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setPartnerId(long partnerId) {
-		this.partnerId = partnerId;
-	}
+    public long getProductId() {
+        return productId;
+    }
 
-	public ProductPartner(long id, long productId, long partnerId) {
-		this.id = id;
-		this.productId = productId;
-		this.partnerId = partnerId;
-	}
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
 
-	public ProductPartner() {
+    public long getPartnerId() {
+        return partnerId;
+    }
 
-	}
+    public void setPartnerId(long partnerId) {
+        this.partnerId = partnerId;
+    }
 
 }

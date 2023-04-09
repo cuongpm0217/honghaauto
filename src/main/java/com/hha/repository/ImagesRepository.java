@@ -1,9 +1,8 @@
 package com.hha.repository;
 
+import com.hha.entities.Images;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.hha.entities.Images;
-
-public interface ImagesRepository extends JpaRepository<Images, Long>{
+public interface ImagesRepository extends JpaRepository<Images, Long> {
 
 }

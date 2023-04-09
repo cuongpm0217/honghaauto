@@ -3,68 +3,67 @@ package com.hha.dtos;
 import java.util.Date;
 
 public class BranchDTO extends BaseDTO {
-	private long id;
+    private long id;
 
-	private String genId;
+    private String genId;
 
-	private int lever;// 0-9 des
+    private int lever;// 0-9 des
 
-	private String name;
-	
-	private Date establishDate;
-	
-	public long getId() {
-		return id;
-	}
+    private String name;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    private Date establishDate;
 
-	public String getGenId() {
-		return genId;
-	}
+    public BranchDTO() {
 
-	public void setGenId(String genId) {
-		this.genId = genId;
-	}
+    }
 
-	public int getLever() {
-		return lever;
-	}
+    public BranchDTO(long id, String genId, int lever, String name, Date establishDate) {
+        super();
+        this.id = id;
+        this.genId = genId;
+        this.lever = lever;
+        this.name = name;
+        this.establishDate = establishDate;
+    }
 
-	public void setLever(int lever) {
-		this.lever = lever;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getGenId() {
+        return genId;
+    }
 
-	
-	public Date getEstablishDate() {
-		return establishDate;
-	}
+    public void setGenId(String genId) {
+        this.genId = genId;
+    }
 
-	public void setEstablishDate(Date establishDate) {
-		this.establishDate = establishDate;
-	}
+    public int getLever() {
+        return lever;
+    }
 
-	public BranchDTO() {
-		
-	}
+    public void setLever(int lever) {
+        this.lever = lever;
+    }
 
-	public BranchDTO(long id, String genId, int lever, String name, Date establishDate) {
-		super();
-		this.id = id;
-		this.genId = genId;
-		this.lever = lever;
-		this.name = name;
-		this.establishDate = establishDate;
-	}
-	
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getEstablishDate() {
+        return establishDate;
+    }
+
+    public void setEstablishDate(Date establishDate) {
+        this.establishDate = establishDate;
+    }
+
 }

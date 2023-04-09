@@ -1,53 +1,48 @@
 package com.hha.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
+import javax.persistence.*;
 
 @Entity
 public class ModuleDetail extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column
-	private String name;
-	@Column(name = "module_id", nullable = false)
-	private long moduleId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
+    private String name;
+    @Column(name = "module_id", nullable = false)
+    private long moduleId;
 
-	public long getId() {
-		return id;
-	}
+    public ModuleDetail(long id, String name, long moduleId) {
+        this.id = id;
+        this.name = name;
+        this.moduleId = moduleId;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public ModuleDetail() {
 
-	public String getName() {
-		return name;
-	}
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public long getModuleId() {
-		return moduleId;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setModuleId(long moduleId) {
-		this.moduleId = moduleId;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public ModuleDetail(long id, String name, long moduleId) {
-		this.id = id;
-		this.name = name;
-		this.moduleId = moduleId;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public ModuleDetail() {
+    public long getModuleId() {
+        return moduleId;
+    }
 
-	}
+    public void setModuleId(long moduleId) {
+        this.moduleId = moduleId;
+    }
 }

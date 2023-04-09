@@ -2,35 +2,34 @@ package com.hha.dtos;
 
 public class WareHouseItemDTO extends BaseDTO {
 
-	private long id;
+    private long id;
 
-	private String name;// Fixed assets,accessary,equipment
+    private String name;// Fixed assets,accessary,equipment
 
-	public long getId() {
-		return id;
-	}
+    public WareHouseItemDTO() {
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public WareHouseItemDTO(long id, String name) {
+        super();
+        this.id = id;
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public WareHouseItemDTO() {
-	}
+    public String getName() {
+        return name;
+    }
 
-	public WareHouseItemDTO(long id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	
-	
+
 }

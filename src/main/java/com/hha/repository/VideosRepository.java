@@ -1,9 +1,8 @@
 package com.hha.repository;
 
+import com.hha.entities.Videos;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.hha.entities.Videos;
-
-public interface VideosRepository extends JpaRepository<Videos, Long>{
+public interface VideosRepository extends JpaRepository<Videos, Long> {
 
 }

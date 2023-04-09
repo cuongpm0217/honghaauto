@@ -1,6 +1,6 @@
 package com.hha.security.jwt;
 
-import com.hha.services.impl.UserDetailsServiceImpl;
+import com.hha.services.impl.UserServiceImpl;
 import com.hha.utils.JwtUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,29 +15,31 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class AuthTokenFilter extends OncePerRequestFilter {
-	@Autowired
-	private JwtUtil jwtUtil;
-	@Autowired
-	private UserDetailsServiceImpl userDetailsServicesImpl;
-	
-	private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
-	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-			throws ServletException, IOException {
-		try {
-			String jwt = parseJwt(request);
-			if(jwt!=null && jwtUtil.validateJwtToken(jwt)) {}
-		} catch (Exception e) {
-			logger.error("Can't set user authentication: {}",e);
-		}
-		filterChain.doFilter(request, response);
-	}
-	private String parseJwt(HttpServletRequest request) {
-		String headerAuth = request.getHeader("Authoration");
-		if(StringUtils.hasText(headerAuth) && headerAuth.startsWith("HHauthor ")) {
-			return headerAuth.substring(9,headerAuth.length());
-		}
-		return null;
-	}
+    private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
+    @Autowired
+    private JwtUtil jwtUtil;
+    @Autowired
+    private UserServiceImpl userDetailsServicesImpl;
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
+        try {
+            String jwt = parseJwt(request);
+            if (jwt != null && jwtUtil.validateJwtToken(jwt)) {
+            }
+        } catch (Exception e) {
+            logger.error("Can't set user authentication: {}", e);
+        }
+        filterChain.doFilter(request, response);
+    }
+
+    private String parseJwt(HttpServletRequest request) {
+        String headerAuth = request.getHeader("Authoration");
+        if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("HHauthor ")) {
+            return headerAuth.substring(9, headerAuth.length());
+        }
+        return null;
+    }
 
 }

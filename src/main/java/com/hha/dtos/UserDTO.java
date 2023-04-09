@@ -5,6 +5,16 @@ public class UserDTO extends BaseDTO {
     private String userName;
     private String passWord;
 
+    public UserDTO() {
+    }
+
+    public UserDTO(long id, String userName, String passWord) {
+        super();
+        this.id = id;
+        this.userName = userName;
+        this.passWord = passWord;
+    }
+
     public long getId() {
         return id;
     }
@@ -26,16 +36,6 @@ public class UserDTO extends BaseDTO {
     }
 
     public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
-
-    public UserDTO() {
-    }
-
-	public UserDTO(long id, String userName, String passWord) {
-        super();
-        this.id = id;
-        this.userName = userName;
         this.passWord = passWord;
     }
 

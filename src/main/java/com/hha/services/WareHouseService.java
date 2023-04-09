@@ -5,15 +5,15 @@ import com.hha.entities.WareHouse;
 import java.util.List;
 
 public interface WareHouseService {
-	WareHouse create(WareHouse wh);
+    WareHouse create(WareHouse wh);
 
-	WareHouse update(long id, WareHouse wh);
+    WareHouse update(long id, WareHouse wh);
 
-	void delete(long id);
+    void delete(long id);
 
-	boolean hidden(long id);
+    boolean hidden(long id);
 
-	WareHouse getById(long id);
+    WareHouse getById(long id);
 
-	List<WareHouse> getAll();
+    List<WareHouse> getAll();
 }

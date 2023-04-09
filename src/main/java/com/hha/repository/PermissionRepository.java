@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface PermissionRepository extends JpaRepository<Permission, Long>{
-	@Query(value="Select * from permission p where p.action =:action",nativeQuery=true)
-	public Optional<Permission> findByAction(@Param("action") EPermission action);	
+public interface PermissionRepository extends JpaRepository<Permission, Long> {
+    @Query(value = "Select * from permission p where p.action =:action", nativeQuery = true)
+    public Optional<Permission> findByAction(@Param("action") EPermission action);
 }

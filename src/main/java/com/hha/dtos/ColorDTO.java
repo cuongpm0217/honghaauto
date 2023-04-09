@@ -1,54 +1,54 @@
 package com.hha.dtos;
 
-public class ColorDTO extends BaseDTO{
-	private long id;
+public class ColorDTO extends BaseDTO {
+    private long id;
 
-	private String name;
+    private String name;
 
-	private String rgb;
+    private String rgb;
 
-	private String code;
+    private String code;
 
-	public long getId() {
-		return id;
-	}
+    public ColorDTO(long id, String name, String rgb, String code) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.rgb = rgb;
+        this.code = code;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public ColorDTO() {
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getRgb() {
-		return rgb;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setRgb(String rgb) {
-		this.rgb = rgb;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getRgb() {
+        return rgb;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setRgb(String rgb) {
+        this.rgb = rgb;
+    }
 
-	public ColorDTO(long id, String name, String rgb, String code) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.rgb = rgb;
-		this.code = code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public ColorDTO() {
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 }
