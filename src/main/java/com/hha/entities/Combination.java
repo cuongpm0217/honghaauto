@@ -3,7 +3,7 @@ package com.hha.entities;
 import javax.persistence.*;
 
 @Entity
-public class Group extends BaseEntity {
+public class Combination extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -12,11 +12,11 @@ public class Group extends BaseEntity {
     @Column
     private String name;
 
-    public Group() {
+    public Combination() {
 
     }
 
-    public Group(long id, String genId, String name) {
+    public Combination(long id, String genId, String name) {
         super();
         this.id = id;
         this.genId = genId;

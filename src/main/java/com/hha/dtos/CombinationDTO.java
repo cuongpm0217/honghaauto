@@ -1,20 +1,20 @@
 package com.hha.dtos;
 
-public class GroupDTO extends BaseDTO {
+public class CombinationDTO extends BaseDTO {
     private long id;
     private String genId;
     private String name;
 
-    public GroupDTO(long id, String name) {
+    public CombinationDTO(long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public GroupDTO() {
+    public CombinationDTO() {
 
     }
 
-    public GroupDTO(long id, String genId, String name) {
+    public CombinationDTO(long id, String genId, String name) {
         super();
         this.id = id;
         this.genId = genId;
