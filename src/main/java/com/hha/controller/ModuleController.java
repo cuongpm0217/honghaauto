@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/module")
+@CrossOrigin(value="*")
 public class ModuleController {
     @Autowired
     private ModuleService ms;

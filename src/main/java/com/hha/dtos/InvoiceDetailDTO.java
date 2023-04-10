@@ -1,7 +1,5 @@
 package com.hha.dtos;
 
-import java.util.Date;
-
 public class InvoiceDetailDTO extends BaseDTO {
 
     private long id;

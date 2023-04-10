@@ -190,4 +190,12 @@ public class EmployeeDTO extends BaseDTO {
         this.depId = depId;
     }
 
+	public long getBranchId() {
+		return branchId;
+	}
+
+	public void setBranchId(long branchId) {
+		this.branchId = branchId;
+	}
+
 }
