@@ -7,22 +7,28 @@ import java.util.Date;
 public abstract class BaseDTO {
     protected Date createDate;
     private Date modifyDate;
-    private long userCreate;
-    private long userModify;
+    private String userCreate;
+    private String userModify;
     private String txtCreateDate;
     private String txtModifyDate;
     private Converter convert;
     private boolean isEnable;
+  
+   
 
-    public BaseDTO(Date createDate, Date modifyDate, long userCreate, long userModify, boolean isEnable) {
-        this.createDate = createDate;
-        this.modifyDate = modifyDate;
-        this.userCreate = userCreate;
-        this.userModify = userModify;
-        this.isEnable = isEnable;
-    }
+    public BaseDTO(Date createDate, Date modifyDate, String userCreate, String userModify, String txtCreateDate,
+			String txtModifyDate, boolean isEnable) {
+		this.createDate = createDate;
+		this.modifyDate = modifyDate;
+		this.userCreate = userCreate;
+		this.userModify = userModify;
+		this.txtCreateDate = txtCreateDate;
+		this.txtModifyDate = txtModifyDate;
+		this.isEnable = isEnable;		
+		convert = new Converter();
+	}
 
-    public BaseDTO() {
+	public BaseDTO() {
         convert = new Converter();
     }
 
@@ -60,19 +66,19 @@ public abstract class BaseDTO {
         this.txtModifyDate = convert.txtDMYHH(modifyDate);
     }
 
-    public long getUserCreate() {
+    public String getUserCreate() {
         return userCreate;
     }
 
-    public void setUserCreate(long userCreate) {
+    public void setUserCreate(String userCreate) {
         this.userCreate = userCreate;
     }
 
-    public long getUserModify() {
+    public String getUserModify() {
         return userModify;
     }
 
-    public void setUserModify(long userModify) {
+    public void setUserModify(String userModify) {
         this.userModify = userModify;
     }
 
@@ -83,4 +89,13 @@ public abstract class BaseDTO {
     public void setEnable(boolean isEnable) {
         this.isEnable = isEnable;
     }
+
+	public void setTxtCreateDate(String txtCreateDate) {
+		this.txtCreateDate = txtCreateDate;
+	}
+
+	public void setTxtModifyDate(String txtModifyDate) {
+		this.txtModifyDate = txtModifyDate;
+	}
+    
 }

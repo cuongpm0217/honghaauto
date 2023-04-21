@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +26,8 @@ public class JwtTokenController {
 	private final String JWT_SECRET = "baDuHongHa";
 	private final long JWT_EXPIRATION = 604800000L;
 	private Logger log;
-	public String generateToken(UserDetailsImpl userDetail) {
+	public String generateToken(Authentication authentication) {
+		UserDetailsImpl userDetail = (UserDetailsImpl) authentication.getPrincipal();
 		Date now = new Date();
 		Map<String, Object> payLoadMap = new HashMap<String, Object>();
 		String payLoadCustom[];
@@ -48,7 +50,12 @@ public class JwtTokenController {
 
 	public Long getUserIdFromJWT(String token) {
 		Claims claims = Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(token).getBody();
-		return Long.parseLong(claims.getSubject());
+		Long userID = (Long) claims.get("userId");
+		return userID;
+	}
+	public String getUserNameFromJWT(String token) {
+		Claims claims = Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(token).getBody();
+		return claims.getSubject();
 	}
 	public boolean validateToken(String authToken) {
         try {

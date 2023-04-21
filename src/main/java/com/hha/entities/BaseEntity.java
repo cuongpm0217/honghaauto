@@ -19,13 +19,13 @@ public abstract class BaseEntity {
     @Temporal(TemporalType.TIMESTAMP)
     protected Date modifyDate;
     @CreatedBy
-    protected long userCreate;
+	protected String userCreate;
     @LastModifiedBy
-    protected long userModify;
+    protected String userModify;
     @Column(name = "is_enable")
     protected boolean isEnable;
 
-    public BaseEntity(Date createDate, Date modifyDate, long userCreate, long userModify,
+    public BaseEntity(Date createDate, Date modifyDate, String userCreate, String userModify,
                       boolean isEnable) {
         this.createDate = createDate;
         this.modifyDate = modifyDate;
@@ -54,19 +54,19 @@ public abstract class BaseEntity {
         this.modifyDate = modifyDate;
     }
 
-    public long getUserCreate() {
+    public String getUserCreate() {
         return userCreate;
     }
 
-    public void setUserCreate(long userCreate) {
+    public void setUserCreate(String userCreate) {
         this.userCreate = userCreate;
     }
 
-    public long getUserModify() {
+    public String getUserModify() {
         return userModify;
     }
 
-    public void setUserModify(long userModify) {
+    public void setUserModify(String userModify) {
         this.userModify = userModify;
     }
 
